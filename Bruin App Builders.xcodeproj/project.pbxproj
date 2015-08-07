@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFF21B755FC800D7E59C /* AppDelegate.swift */; };
+		84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */; };
+		84EAAFFD1B755FC800D7E59C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EAAFFC1B755FC800D7E59C /* Images.xcassets */; };
+		84EAB00C1B755FC800D7E59C /* Bruin_App_BuildersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAB00B1B755FC800D7E59C /* Bruin_App_BuildersTests.swift */; };
+		84EAB0171B75608500D7E59C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAB0151B75608500D7E59C /* LoginViewController.swift */; };
+		84EAB0181B75608500D7E59C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EAB0161B75608500D7E59C /* LoginViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84EAB0061B755FC800D7E59C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84EAAFE51B755FC800D7E59C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84EAAFEC1B755FC800D7E59C;
+			remoteInfo = "Bruin App Builders";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84EAAFED1B755FC800D7E59C /* Bruin App Builders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bruin App Builders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EAAFF11B755FC800D7E59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84EAAFF21B755FC800D7E59C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84EAAFF51B755FC800D7E59C /* Bruin_App_Builders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bruin_App_Builders.xcdatamodel; sourceTree = "<group>"; };
+		84EAAFFC1B755FC800D7E59C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84EAB0051B755FC800D7E59C /* Bruin App BuildersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bruin App BuildersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EAB00A1B755FC800D7E59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84EAB00B1B755FC800D7E59C /* Bruin_App_BuildersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bruin_App_BuildersTests.swift; sourceTree = "<group>"; };
+		84EAB0151B75608500D7E59C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84EAB0161B75608500D7E59C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84EAAFEA1B755FC800D7E59C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EAB0021B755FC800D7E59C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84EAAFE41B755FC800D7E59C = {
+			isa = PBXGroup;
+			children = (
+				84EAAFEF1B755FC800D7E59C /* Bruin App Builders */,
+				84EAB0081B755FC800D7E59C /* Bruin App BuildersTests */,
+				84EAAFEE1B755FC800D7E59C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84EAAFEE1B755FC800D7E59C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84EAAFED1B755FC800D7E59C /* Bruin App Builders.app */,
+				84EAB0051B755FC800D7E59C /* Bruin App BuildersTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84EAAFEF1B755FC800D7E59C /* Bruin App Builders */ = {
+			isa = PBXGroup;
+			children = (
+				84EAB0151B75608500D7E59C /* LoginViewController.swift */,
+				84EAB0161B75608500D7E59C /* LoginViewController.xib */,
+				84EAAFF21B755FC800D7E59C /* AppDelegate.swift */,
+				84EAAFFC1B755FC800D7E59C /* Images.xcassets */,
+				84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */,
+				84EAAFF01B755FC800D7E59C /* Supporting Files */,
+			);
+			path = "Bruin App Builders";
+			sourceTree = "<group>";
+		};
+		84EAAFF01B755FC800D7E59C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84EAAFF11B755FC800D7E59C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84EAB0081B755FC800D7E59C /* Bruin App BuildersTests */ = {
+			isa = PBXGroup;
+			children = (
+				84EAB00B1B755FC800D7E59C /* Bruin_App_BuildersTests.swift */,
+				84EAB0091B755FC800D7E59C /* Supporting Files */,
+			);
+			path = "Bruin App BuildersTests";
+			sourceTree = "<group>";
+		};
+		84EAB0091B755FC800D7E59C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84EAB00A1B755FC800D7E59C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84EAAFEC1B755FC800D7E59C /* Bruin App Builders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84EAB00F1B755FC800D7E59C /* Build configuration list for PBXNativeTarget "Bruin App Builders" */;
+			buildPhases = (
+				84EAAFE91B755FC800D7E59C /* Sources */,
+				84EAAFEA1B755FC800D7E59C /* Frameworks */,
+				84EAAFEB1B755FC800D7E59C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bruin App Builders";
+			productName = "Bruin App Builders";
+			productReference = 84EAAFED1B755FC800D7E59C /* Bruin App Builders.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84EAB0041B755FC800D7E59C /* Bruin App BuildersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84EAB0121B755FC800D7E59C /* Build configuration list for PBXNativeTarget "Bruin App BuildersTests" */;
+			buildPhases = (
+				84EAB0011B755FC800D7E59C /* Sources */,
+				84EAB0021B755FC800D7E59C /* Frameworks */,
+				84EAB0031B755FC800D7E59C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84EAB0071B755FC800D7E59C /* PBXTargetDependency */,
+			);
+			name = "Bruin App BuildersTests";
+			productName = "Bruin App BuildersTests";
+			productReference = 84EAB0051B755FC800D7E59C /* Bruin App BuildersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84EAAFE51B755FC800D7E59C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Gu Studios";
+				TargetAttributes = {
+					84EAAFEC1B755FC800D7E59C = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					84EAB0041B755FC800D7E59C = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 84EAAFEC1B755FC800D7E59C;
+					};
+				};
+			};
+			buildConfigurationList = 84EAAFE81B755FC800D7E59C /* Build configuration list for PBXProject "Bruin App Builders" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84EAAFE41B755FC800D7E59C;
+			productRefGroup = 84EAAFEE1B755FC800D7E59C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84EAAFEC1B755FC800D7E59C /* Bruin App Builders */,
+				84EAB0041B755FC800D7E59C /* Bruin App BuildersTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84EAAFEB1B755FC800D7E59C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EAB0181B75608500D7E59C /* LoginViewController.xib in Resources */,
+				84EAAFFD1B755FC800D7E59C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EAB0031B755FC800D7E59C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84EAAFE91B755FC800D7E59C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EAB0171B75608500D7E59C /* LoginViewController.swift in Sources */,
+				84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */,
+				84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EAB0011B755FC800D7E59C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EAB00C1B755FC800D7E59C /* Bruin_App_BuildersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84EAB0071B755FC800D7E59C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84EAAFEC1B755FC800D7E59C /* Bruin App Builders */;
+			targetProxy = 84EAB0061B755FC800D7E59C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		84EAB00D1B755FC800D7E59C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84EAB00E1B755FC800D7E59C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84EAB0101B755FC800D7E59C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Bruin App Builders/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84EAB0111B755FC800D7E59C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Bruin App Builders/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		84EAB0131B755FC800D7E59C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Bruin App BuildersTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bruin App Builders.app/Bruin App Builders";
+			};
+			name = Debug;
+		};
+		84EAB0141B755FC800D7E59C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Bruin App BuildersTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bruin App Builders.app/Bruin App Builders";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84EAAFE81B755FC800D7E59C /* Build configuration list for PBXProject "Bruin App Builders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EAB00D1B755FC800D7E59C /* Debug */,
+				84EAB00E1B755FC800D7E59C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84EAB00F1B755FC800D7E59C /* Build configuration list for PBXNativeTarget "Bruin App Builders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EAB0101B755FC800D7E59C /* Debug */,
+				84EAB0111B755FC800D7E59C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84EAB0121B755FC800D7E59C /* Build configuration list for PBXNativeTarget "Bruin App BuildersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EAB0131B755FC800D7E59C /* Debug */,
+				84EAB0141B755FC800D7E59C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84EAAFF51B755FC800D7E59C /* Bruin_App_Builders.xcdatamodel */,
+			);
+			currentVersion = 84EAAFF51B755FC800D7E59C /* Bruin_App_Builders.xcdatamodel */;
+			path = Bruin_App_Builders.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84EAAFE51B755FC800D7E59C /* Project object */;
+}
