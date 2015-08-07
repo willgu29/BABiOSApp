@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
+    @IBAction func goToMainViewController(sender: UIButton)
+    {
+        presentViewController(MainPageViewController(), animated: true, completion: nil)
+    }
 }
