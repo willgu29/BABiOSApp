@@ -13,6 +13,7 @@
 		84EAB00C1B755FC800D7E59C /* Bruin_App_BuildersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAB00B1B755FC800D7E59C /* Bruin_App_BuildersTests.swift */; };
 		84EAB0171B75608500D7E59C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAB0151B75608500D7E59C /* LoginViewController.swift */; };
 		84EAB0181B75608500D7E59C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EAB0161B75608500D7E59C /* LoginViewController.xib */; };
+		F6BA563FAAA9560A7D9E3040 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17441324BB07FB89509A9EC2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17441324BB07FB89509A9EC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EAAFED1B755FC800D7E59C /* Bruin App Builders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bruin App Builders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EAAFF11B755FC800D7E59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84EAAFF21B755FC800D7E59C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		84EAB00B1B755FC800D7E59C /* Bruin_App_BuildersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bruin_App_BuildersTests.swift; sourceTree = "<group>"; };
 		84EAB0151B75608500D7E59C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84EAB0161B75608500D7E59C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A16E3AEA7B2FC07E0948E251 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BA24D3CE2891132160D8B17F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6BA563FAAA9560A7D9E3040 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		173DFBD247DF6DF0BD2AA576 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA24D3CE2891132160D8B17F /* Pods.debug.xcconfig */,
+				A16E3AEA7B2FC07E0948E251 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84EAAFE41B755FC800D7E59C = {
 			isa = PBXGroup;
 			children = (
 				84EAAFEF1B755FC800D7E59C /* Bruin App Builders */,
 				84EAB0081B755FC800D7E59C /* Bruin App BuildersTests */,
 				84EAAFEE1B755FC800D7E59C /* Products */,
+				173DFBD247DF6DF0BD2AA576 /* Pods */,
+				B71E8CD7E3A1B3F8F1AF72A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +128,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B71E8CD7E3A1B3F8F1AF72A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17441324BB07FB89509A9EC2 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84EAB00F1B755FC800D7E59C /* Build configuration list for PBXNativeTarget "Bruin App Builders" */;
 			buildPhases = (
+				E921880D8ADE5EFE76E568A1 /* Check Pods Manifest.lock */,
 				84EAAFE91B755FC800D7E59C /* Sources */,
 				84EAAFEA1B755FC800D7E59C /* Frameworks */,
 				84EAAFEB1B755FC800D7E59C /* Resources */,
+				B2E1A27078975BB77D55555C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +231,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B2E1A27078975BB77D55555C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E921880D8ADE5EFE76E568A1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84EAAFE91B755FC800D7E59C /* Sources */ = {
@@ -319,6 +378,7 @@
 		};
 		84EAB0101B755FC800D7E59C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA24D3CE2891132160D8B17F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -331,6 +391,7 @@
 		};
 		84EAB0111B755FC800D7E59C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A16E3AEA7B2FC07E0948E251 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -394,6 +455,7 @@
 				84EAB0111B755FC800D7E59C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84EAB0121B755FC800D7E59C /* Build configuration list for PBXNativeTarget "Bruin App BuildersTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +464,7 @@
 				84EAB0141B755FC800D7E59C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
