@@ -8,17 +8,30 @@
 
 import UIKit
 
-class MainPageViewController: UIViewController {
+class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var tableView: UITableView  =   UITableView()
+    var items: [String] = ["Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "can be seen","Cant be seen", "X", "Games","Viper", "X", "Games"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-        button.frame = CGRectMake(100, 100, 100, 50)
+        button.frame = CGRectMake(0, 0, 350, 50)
         button.backgroundColor = UIColor.greenColor()
-        button.setTitle("Test Button", forState: UIControlState.Normal)
-        button.addTarget(self, action: "butto:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.setTitle(" < Test Button", forState: UIControlState.Normal)
+        button.titleLabel!.font = UIFont(name: "AmericanTypewriter" , size: 25)
+        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(button)
         // Do any additional setup after loading the view.
+        
+        tableView.frame         =   CGRectMake(0, 50, 320, 1000);
+        tableView.delegate      =   self
+        tableView.dataSource    =   self
+        
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        self.view.addSubview(tableView)
         
     }
 
@@ -27,8 +40,25 @@ class MainPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func butto(sender:UIButton) {
+    func buttonAction(sender:UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        cell.textLabel?.text = "•" + " " + self.items[indexPath.row]
+        
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //println("You selected cell #\(indexPath.row)!")
     }
     
     /*
