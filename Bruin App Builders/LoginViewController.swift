@@ -10,6 +10,13 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameText: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +30,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func goToMainViewController(sender: UIButton)
     {
+        //Authentication
+        
         presentViewController(MainPageViewController(), animated: true, completion: nil)
+    }
+    @IBAction func signUp(sender: AnyObject) {
+        //use igrouply and help the user sign up
     }
 }

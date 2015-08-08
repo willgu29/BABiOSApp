@@ -18,13 +18,12 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         button.frame = CGRectMake(0, 0, 350, 50)
         button.backgroundColor = UIColor.greenColor()
-        button.setTitle(" < Test Button", forState: UIControlState.Normal)
+        button.setTitle(" < Log Out", forState: UIControlState.Normal)
         button.titleLabel!.font = UIFont(name: "AmericanTypewriter" , size: 25)
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(button)
         // Do any additional setup after loading the view.
-        
         tableView.frame         =   CGRectMake(0, 50, 320, 1000);
         tableView.delegate      =   self
         tableView.dataSource    =   self

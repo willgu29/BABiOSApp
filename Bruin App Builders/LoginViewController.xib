@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Bruin_App_Builders" customModuleProvider="target">
             <connections>
+                <outlet property="passwordTxt" destination="sPA-RI-z5g" id="mIW-pu-EvK"/>
+                <outlet property="usernameText" destination="Hkq-KR-Mko" id="F0F-68-hc1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,37 +16,68 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycf-nZ-geU">
-                    <rect key="frame" x="126" y="360" width="69" height="30"/>
-                    <state key="normal" title="Go Ahead">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="goToMainViewController:" destination="-1" eventType="touchUpInside" id="y5n-N3-oKc"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BAB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q5-bg-h4J">
                     <rect key="frame" x="80" y="0.0" width="160" height="79"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="79" y="59" width="160" height="79"/>
+                    </variation>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycf-nZ-geU">
+                    <rect key="frame" x="139" y="282" width="43" height="30"/>
+                    <state key="normal" title="Log In">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="138" y="341" width="43" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="goToMainViewController:" destination="-1" eventType="touchUpInside" id="y5n-N3-oKc"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkq-KR-Mko">
+                    <rect key="frame" x="64" y="151" width="194" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="63" y="210" width="194" height="30"/>
+                    </variation>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sPA-RI-z5g">
+                    <rect key="frame" x="64" y="209" width="194" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="63" y="268" width="194" height="30"/>
+                    </variation>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL4-eb-RdB">
+                    <rect key="frame" x="125" y="78" width="71" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="124" y="137" width="71" height="21"/>
+                    </variation>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9d-au-6AI">
+                    <rect key="frame" x="49" y="340" width="224" height="30"/>
+                    <state key="normal" title="Don't have an account? Sign up!">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="48" y="399" width="224" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="signUp:" destination="-1" eventType="touchUpInside" id="9eZ-vP-pyC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="364" y="341"/>
+            <point key="canvasLocation" x="379" y="288"/>
         </view>
-        <viewController id="9Fh-qA-noi">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="a4l-ZB-3M4"/>
-                <viewControllerLayoutGuide type="bottom" id="bYO-Ba-HAD"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="H3n-2G-Jeh">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            </view>
-            <point key="canvasLocation" x="568" y="304"/>
-        </viewController>
     </objects>
 </document>
