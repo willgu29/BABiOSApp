@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameText: UITextField!
-    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
     
     
     
@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
         
         presentViewController(MainPageViewController(), animated: true, completion: nil)
     }
+    
+    
     @IBAction func signUp(sender: AnyObject) {
         //use igrouply and help the user sign up
     }

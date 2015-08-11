@@ -32,6 +32,9 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.view.addSubview(tableView)
         
+        let bottomview = UITabBar()
+        bottomview.frame = CGRect()
+        
     }
 
     override func didReceiveMemoryWarning() {
