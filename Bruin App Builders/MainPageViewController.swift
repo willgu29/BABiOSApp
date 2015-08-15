@@ -8,13 +8,15 @@
 
 import UIKit
 
-class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
     var tableView: UITableView  =   UITableView()
     var items: [String] = ["Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "can be seen","Cant be seen", "X", "Games","Viper", "X", "Games"]
+    var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         button.frame = CGRectMake(0, 0, 350, 50)
         button.backgroundColor = UIColor.greenColor()
@@ -23,23 +25,30 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(button)
-        // Do any additional setup after loading the view.
+        
         tableView.frame         =   CGRectMake(0, 50, 320, 1000);
         tableView.delegate      =   self
         tableView.dataSource    =   self
-        
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
         self.view.addSubview(tableView)
         
-        let bottomview = UITabBar()
-        bottomview.frame = CGRect()
+        self.scrollView = UIScrollView()
+        self.scrollView.delegate = self
+        self.scrollView.contentSize = CGSizeMake(1000, 1000)
+        scrollView.addSubview(tableView)
+        view.addSubview(scrollView)
+        
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollView.frame = view.bounds
     }
     
     func buttonAction(sender:UIButton) {

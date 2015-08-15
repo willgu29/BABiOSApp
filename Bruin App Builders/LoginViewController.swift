@@ -52,34 +52,36 @@ class LoginViewController: UIViewController {
     
     @IBAction func goToMainViewController(sender: UIButton)
     {
-        if (usernameText.text == "")
-        {
-            if (passwordText.text == "")
-            {
-                errorMessageLabel.text = "Please enter a username and password"
-            }
-            else
-            {
-                errorMessageLabel.text = "Please enter a username"
-            }
-        }
-        else if (passwordText.text == "")
-        {
-            errorMessageLabel.text = "Please enter a password"
-        }
-        else if isUserNameWrong(usernameText.text)
-        {
-            errorMessageLabel.text = "Please enter a valid username"
-        }
-        else if isPasswordWrong(passwordText.text)
-        {
-            errorMessageLabel.text = "Please enter a valid password"
-        }
-        else
-        {
-            //Authentication
-            presentViewController(MainPageViewController(), animated: true, completion: nil)
-        }
+//        if (usernameText.text == "")
+//        {
+//            if (passwordText.text == "")
+//            {
+//                errorMessageLabel.text = "Please enter a username and password"
+//            }
+//            else
+//            {
+//                errorMessageLabel.text = "Please enter a username"
+//            }
+//        }
+//        else if (passwordText.text == "")
+//        {
+//            errorMessageLabel.text = "Please enter a password"
+//        }
+//        else if isUserNameWrong(usernameText.text)
+//        {
+//            errorMessageLabel.text = "Please enter a valid username"
+//        }
+//        else if isPasswordWrong(passwordText.text)
+//        {
+//            errorMessageLabel.text = "Please enter a valid password"
+//        }
+//        else
+//        {
+//            //Authentication
+//            presentViewController(MainPageViewController(), animated: true, completion: nil)
+//        }
+        
+        presentViewController(MainPageViewController(), animated: true, completion: nil)
     }
     
     
