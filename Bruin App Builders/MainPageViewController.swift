@@ -12,13 +12,12 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var tableView: UITableView  =   UITableView()
     var items: [String] = ["Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "can be seen","Cant be seen", "X", "Games","Viper", "X", "Games"]
-    var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-        button.frame = CGRectMake(0, 0, 350, 50)
+        button.frame = CGRectMake(0, 0, self.view.frame.width, 50)
         button.backgroundColor = UIColor.greenColor()
         button.setTitle(" < Log Out", forState: UIControlState.Normal)
         button.titleLabel!.font = UIFont(name: "AmericanTypewriter" , size: 25)
@@ -26,18 +25,11 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(button)
         
-        tableView.frame         =   CGRectMake(0, 50, 320, 1000);
+        tableView.frame         =   CGRectMake(0, 50, self.view.frame.width , self.view.frame.height - 50);
         tableView.delegate      =   self
         tableView.dataSource    =   self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(tableView)
-        
-        self.scrollView = UIScrollView()
-        self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSizeMake(1000, 1000)
-        scrollView.addSubview(tableView)
-        view.addSubview(scrollView)
-        
         
     }
 
@@ -48,7 +40,6 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        scrollView.frame = view.bounds
     }
     
     func buttonAction(sender:UIButton) {
@@ -60,12 +51,9 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.textLabel?.text = "•" + " " + self.items[indexPath.row]
-        
         return cell
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

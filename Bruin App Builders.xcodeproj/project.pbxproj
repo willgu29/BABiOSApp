@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C847B271B7ECC49001DC747 /* GroupViewController.swift */; };
+		5C847B2A1B7ECC49001DC747 /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C847B281B7ECC49001DC747 /* GroupViewController.xib */; };
 		5C8DFEFD1B756960001A5148 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */; };
 		84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFF21B755FC800D7E59C /* AppDelegate.swift */; };
 		84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		17441324BB07FB89509A9EC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C847B271B7ECC49001DC747 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		5C847B281B7ECC49001DC747 /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
 		5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		84EAAFED1B755FC800D7E59C /* Bruin App Builders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bruin App Builders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EAAFF11B755FC800D7E59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */,
+				5C847B271B7ECC49001DC747 /* GroupViewController.swift */,
+				5C847B281B7ECC49001DC747 /* GroupViewController.xib */,
 				84EAB0151B75608500D7E59C /* LoginViewController.swift */,
 				84EAB0161B75608500D7E59C /* LoginViewController.xib */,
 				84EAAFF21B755FC800D7E59C /* AppDelegate.swift */,
@@ -221,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C847B2A1B7ECC49001DC747 /* GroupViewController.xib in Resources */,
 				84EAB0181B75608500D7E59C /* LoginViewController.xib in Resources */,
 				84EAAFFD1B755FC800D7E59C /* Images.xcassets in Resources */,
 			);
@@ -277,6 +284,7 @@
 				84EAB0171B75608500D7E59C /* LoginViewController.swift in Sources */,
 				84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */,
 				84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */,
+				5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
