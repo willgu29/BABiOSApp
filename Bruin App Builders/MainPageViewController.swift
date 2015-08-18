@@ -25,7 +25,9 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         self.view.addSubview(button)
         
-        tableView.frame         =   CGRectMake(0, 50, self.view.frame.width , self.view.frame.height - 50);
+        
+        
+        tableView.frame         =   CGRectMake(0, 50, self.view.frame.width , self.view.frame.height -         self.tabBarController!.tabBar.frame.height - 50);
         tableView.delegate      =   self
         tableView.dataSource    =   self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
