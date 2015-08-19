@@ -15,16 +15,16 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-
     NSDictionary *parameters = @{@"email": email, @"password": password};
-    [manager POST:@"http://www.igrouply.com/login" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:API_POST_LOGIN parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [_delegate loginResponse:responseObject];
          
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-        [_delegate loginResponse:[error description]];
+        NSDictionary *dictionary = @{@"info": error};
+        [_delegate loginResponse:dictionary];
     }];
 
 }
