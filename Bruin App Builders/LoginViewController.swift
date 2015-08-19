@@ -8,24 +8,36 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, APIWrapperDelegate {
 
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
+    
+    let wrapper = APIWrapper();
     
     
     //MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        wrapper.delegate = self;
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: APIWrapperDelegate
+    
+    func loginResponse(status: String!) {
+        if (status == "/") {
+            presentViewController(createTabBarVC(), animated: true, completion: nil)
+        } else {
+            errorMessageLabel.text = status;
+        }
     }
   
     
@@ -34,38 +46,33 @@ class LoginViewController: UIViewController {
     
     @IBAction func goToMainViewController(sender: UIButton)
     {
-//        if (usernameText.text == "")
-//        {
-//            if (passwordText.text == "")
-//            {
-//                errorMessageLabel.text = "Please enter a username and password"
-//            }
-//            else
-//            {
-//                errorMessageLabel.text = "Please enter a username"
-//            }
-//        }
-//        else if (passwordText.text == "")
-//        {
-//            errorMessageLabel.text = "Please enter a password"
-//        }
-//        else if isUserNameWrong(usernameText.text)
-//        {
-//            errorMessageLabel.text = "Please enter a valid username"
-//        }
-//        else if isPasswordWrong(passwordText.text)
-//        {
-//            errorMessageLabel.text = "Please enter a valid password"
-//        }
-//        else
-//        {
-//            //Authentication
-//            presentViewController(MainPageViewController(), animated: true, completion: nil)
-//        }
+        if (usernameText.text == "")
+        {
+            errorMessageLabel.text = "Please enter a email"
+        }
+        else if (passwordText.text == "")
+        {
+            errorMessageLabel.text = "Please enter a password"
+        }
+        else if isUserNameWrong(usernameText.text)
+        {
+            errorMessageLabel.text = "Please enter a valid email"
+        }
+        else
+        {
+            //Authentication
+            
+            wrapper.postLogin(usernameText.text, andPassword: passwordText.text);
+            
+        }
         
         
         
         
+    }
+    
+    @IBAction func skipButton(sender: UIButton)
+    {
         presentViewController(createTabBarVC(), animated: true, completion: nil)
     }
     

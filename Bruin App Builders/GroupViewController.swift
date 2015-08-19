@@ -26,6 +26,7 @@ class GroupViewController: UIViewController {
         
         //maybe
         //super.prepareForSegue()
+    
     }
     
 

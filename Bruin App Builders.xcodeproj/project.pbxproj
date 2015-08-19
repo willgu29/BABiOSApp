@@ -12,6 +12,7 @@
 		5C8DFEFD1B756960001A5148 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */; };
 		84C6367A1B83F36900C53212 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C636791B83F36900C53212 /* MessagingViewController.swift */; };
 		84C6367C1B83F38400C53212 /* MessagingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C6367B1B83F38400C53212 /* MessagingViewController.xib */; };
+		84C636801B83FA1600C53212 /* APIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6367F1B83FA1600C53212 /* APIWrapper.m */; };
 		84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFF21B755FC800D7E59C /* AppDelegate.swift */; };
 		84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */; };
 		84EAAFFD1B755FC800D7E59C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EAAFFC1B755FC800D7E59C /* Images.xcassets */; };
@@ -38,6 +39,10 @@
 		5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		84C636791B83F36900C53212 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		84C6367B1B83F38400C53212 /* MessagingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingViewController.xib; sourceTree = "<group>"; };
+		84C6367D1B83FA1500C53212 /* Bruin App Builders-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bruin App Builders-Bridging-Header.h"; sourceTree = "<group>"; };
+		84C6367E1B83FA1600C53212 /* APIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIWrapper.h; sourceTree = "<group>"; };
+		84C6367F1B83FA1600C53212 /* APIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIWrapper.m; sourceTree = "<group>"; };
+		84C636811B83FB5500C53212 /* APIURLs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIURLs.h; sourceTree = "<group>"; };
 		84EAAFED1B755FC800D7E59C /* Bruin App Builders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bruin App Builders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EAAFF11B755FC800D7E59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84EAAFF21B755FC800D7E59C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +119,10 @@
 				84EAAFFC1B755FC800D7E59C /* Images.xcassets */,
 				84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */,
 				84EAAFF01B755FC800D7E59C /* Supporting Files */,
+				84C6367E1B83FA1600C53212 /* APIWrapper.h */,
+				84C6367F1B83FA1600C53212 /* APIWrapper.m */,
+				84C6367D1B83FA1500C53212 /* Bruin App Builders-Bridging-Header.h */,
+				84C636811B83FB5500C53212 /* APIURLs.h */,
 			);
 			path = "Bruin App Builders";
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8DFEFD1B756960001A5148 /* MainPageViewController.swift in Sources */,
+				84C636801B83FA1600C53212 /* APIWrapper.m in Sources */,
 				84EAB0171B75608500D7E59C /* LoginViewController.swift in Sources */,
 				84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */,
 				84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */,
@@ -402,10 +412,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Bruin App Builders/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bruin App Builders/Bruin App Builders-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -415,10 +428,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Bruin App Builders/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bruin App Builders/Bruin App Builders-Bridging-Header.h";
 			};
 			name = Release;
 		};
