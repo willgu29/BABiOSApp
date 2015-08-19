@@ -12,7 +12,7 @@
 @class APIWrapperDelegate;
 @protocol APIWrapperDelegate <NSObject>
 
--(void)loginResponse:(NSString *)status;
+-(void)loginResponse:(NSDictionary *)status;
 
 @end
 

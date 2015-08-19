@@ -14,9 +14,10 @@
 -(void)postLogin:(NSString *)email andPassword:(NSString *)password
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
 
     NSDictionary *parameters = @{@"email": email, @"password": password};
-    [manager POST:@"http://igrouply.com/login/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://www.igrouply.com/login" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [_delegate loginResponse:responseObject];
          
@@ -25,7 +26,7 @@
         NSLog(@"Error: %@", error);
         [_delegate loginResponse:[error description]];
     }];
-    
+
 }
 
 @end

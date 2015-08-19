@@ -31,12 +31,13 @@ class LoginViewController: UIViewController, APIWrapperDelegate {
     }
     
     //MARK: APIWrapperDelegate
-    
-    func loginResponse(status: String!) {
-        if (status == "/") {
+    func loginResponse(status: [NSObject : AnyObject]!) {
+        let status: NSDictionary = status as NSDictionary;
+        let statusResult: String = status.valueForKey("info") as! String;
+        if (statusResult == "/") {
             presentViewController(createTabBarVC(), animated: true, completion: nil)
         } else {
-            errorMessageLabel.text = status;
+            errorMessageLabel.text = statusResult;
         }
     }
   

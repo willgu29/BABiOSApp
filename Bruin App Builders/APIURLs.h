@@ -10,7 +10,7 @@
 #define Bruin_App_Builders_APIURLs_h
 
 
-#define POST_LOGIN @"http://igrouply.com/login"  //pass in email : ..,  password: ..
+#define POST_LOGIN @"http://www.igrouply.com/login";  //pass in email : ..,  password: ..
 
 
 #endif
