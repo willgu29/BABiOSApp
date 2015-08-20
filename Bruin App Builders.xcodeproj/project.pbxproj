@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C4ED6A91B848BDC0060CD14 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */; };
+		5C4ED6AA1B848BDC0060CD14 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */; };
 		5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C847B271B7ECC49001DC747 /* GroupViewController.swift */; };
 		5C847B2A1B7ECC49001DC747 /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C847B281B7ECC49001DC747 /* GroupViewController.xib */; };
 		5C8DFEFD1B756960001A5148 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		17441324BB07FB89509A9EC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		5C847B271B7ECC49001DC747 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		5C847B281B7ECC49001DC747 /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
 		5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				5C847B281B7ECC49001DC747 /* GroupViewController.xib */,
 				84C636791B83F36900C53212 /* MessagingViewController.swift */,
 				84C6367B1B83F38400C53212 /* MessagingViewController.xib */,
+				5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */,
+				5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */,
 				84EAAFF21B755FC800D7E59C /* AppDelegate.swift */,
 				84EAAFFC1B755FC800D7E59C /* Images.xcassets */,
 				84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */,
@@ -246,6 +252,7 @@
 				84C6367C1B83F38400C53212 /* MessagingViewController.xib in Resources */,
 				84EAB0181B75608500D7E59C /* LoginViewController.xib in Resources */,
 				84EAAFFD1B755FC800D7E59C /* Images.xcassets in Resources */,
+				5C4ED6AA1B848BDC0060CD14 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +310,7 @@
 				84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */,
 				5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */,
 				84C6367A1B83F36900C53212 /* MessagingViewController.swift in Sources */,
+				5C4ED6A91B848BDC0060CD14 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

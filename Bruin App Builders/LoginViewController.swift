@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, APIWrapperDelegate {
+class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
-    
+    @IBOutlet weak var activityIND: UIActivityIndicatorView!
     let wrapper = APIWrapper();
     
     
@@ -22,6 +22,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         wrapper.delegate = self;
+        activityIND.hidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -30,7 +31,21 @@ class LoginViewController: UIViewController, APIWrapperDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //Used to remove the keyboard when not in use
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
+    
+    //MARK: NOT SURE, TO STOP ANIMATING
+//    override func willMoveToParentViewController(parent: UIViewController?) {
+//        activityIND.hidden = true
+//        activityIND.stopAnimating()
+//    }
+    
     //MARK: APIWrapperDelegate
+    
     func loginResponse(status: [NSObject : AnyObject]!) {
         let status: NSDictionary = status as NSDictionary;
         let statusResult: String = status.valueForKey("info") as! String;
@@ -62,8 +77,10 @@ class LoginViewController: UIViewController, APIWrapperDelegate {
         else
         {
             //Authentication
-            
-            wrapper.postLogin(usernameText.text, andPassword: passwordText.text);
+            activityIND.hidden = false
+            activityIND.startAnimating()
+            //stop animating the activity ind once the new page is open
+           // wrapper.postLogin(usernameText.text, andPassword: passwordText.text);
             
         }
         
@@ -89,7 +106,10 @@ class LoginViewController: UIViewController, APIWrapperDelegate {
     
     //MARK: Helper Functions
     
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     func isUserNameWrong(un : String) -> Bool
     {
@@ -122,14 +142,15 @@ class LoginViewController: UIViewController, APIWrapperDelegate {
         let mainVC = MainPageViewController();
         let groupVC = GroupViewController(nibName:"GroupViewController", bundle:nil);
         let messageVC = MessagingViewController(nibName:"MessagingViewController", bundle:nil);
+        let settingsVC = SettingsViewController(nibName:"SettingsViewController", bundle:nil);
         
         mainVC.title = "People";
         groupVC.title = "Groups";
         messageVC.title = "Messages";
+        settingsVC.title = "Setting";
         
         
-        
-        let arrayOfVCs = [mainVC, groupVC, messageVC];
+        let arrayOfVCs = [mainVC, groupVC, messageVC, settingsVC];
         
         tabVC.viewControllers = arrayOfVCs;
         return tabVC;
