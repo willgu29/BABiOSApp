@@ -21,10 +21,10 @@ class MessagingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func viewControllerSegue() {
-        
+    
+
+    @IBAction func goToAMessagingController(sender: UIButton) {
+        presentViewController(MessagingToAPersonViewController(), animated: true, completion: nil)
     }
-
-
 
 }

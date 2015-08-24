@@ -37,12 +37,12 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         super.touchesBegan(touches, withEvent: event)
     }
     
-    
-    //MARK: NOT SURE, TO STOP ANIMATING
-//    override func willMoveToParentViewController(parent: UIViewController?) {
-//        activityIND.hidden = true
-//        activityIND.stopAnimating()
-//    }
+    override func viewDidDisappear(animated: Bool) {
+        activityIND.hidden = true
+        activityIND.stopAnimating()
+        passwordText.text = ""
+        usernameText.text = ""
+    }
     
     //MARK: APIWrapperDelegate
     
@@ -76,16 +76,10 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         }
         else
         {
-            //Authentication
             activityIND.hidden = false
             activityIND.startAnimating()
-            //stop animating the activity ind once the new page is open
-           // wrapper.postLogin(usernameText.text, andPassword: passwordText.text);
-            
+            wrapper.postLogin(usernameText.text, andPassword: passwordText.text);
         }
-        
-        
-        
         
     }
     
