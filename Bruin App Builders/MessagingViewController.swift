@@ -24,7 +24,7 @@ class MessagingViewController: UIViewController {
     
 
     @IBAction func goToAMessagingController(sender: UIButton) {
-        presentViewController(MessagingToAPersonViewController(), animated: true, completion: nil)
+        presentViewController(MessagingToAPersonViewController(nibName:"MessagingToAPersonViewController", bundle:nil), animated: true, completion: nil)
     }
 
 }

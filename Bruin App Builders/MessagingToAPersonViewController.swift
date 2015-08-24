@@ -52,15 +52,19 @@ class MessagingToAPersonViewController: UIViewController {
         // 3
         var animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
         // 4
-        var changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? 1 : -1)
+        var changeInHeight = (CGRectGetHeight(keyboardFrame) + 0) * (show ? 1 : -1)
         //5
         UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
             self.bottomConstraint.constant += changeInHeight
+            self.bottomConstraint2.constant += changeInHeight
         })
         
     }
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+  
+    @IBOutlet weak var bottomConstraint2: NSLayoutConstraint!
+
 
     /*
     // MARK: - Navigation
