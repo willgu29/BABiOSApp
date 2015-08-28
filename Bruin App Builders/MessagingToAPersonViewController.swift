@@ -61,19 +61,18 @@ class MessagingToAPersonViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var typingANewMessage: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-  
     @IBOutlet weak var bottomConstraint2: NSLayoutConstraint!
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func hitSend(sender: UIButton) {
+        var newMessage : String
+        if (typingANewMessage.text != nil)
+        {
+            newMessage = typingANewMessage.text!
+        }
+        typingANewMessage.text = ""
     }
-    */
+
 
 }

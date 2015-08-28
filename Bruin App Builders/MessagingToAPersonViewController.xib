@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="bottomConstraint" destination="0yN-eC-kaK" id="aHR-do-h9f"/>
                 <outlet property="bottomConstraint2" destination="LPc-w6-9ZE" id="DWi-ac-SQH"/>
+                <outlet property="typingANewMessage" destination="aoi-uh-svX" id="LFI-GX-ryJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +23,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-uh-svX">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your text here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-uh-svX">
                     <rect key="frame" x="0.0" y="530" width="259" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -32,6 +33,9 @@
                     <state key="normal" title="Send">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="hitSend:" destination="-1" eventType="touchUpInside" id="WBx-CJ-52b"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

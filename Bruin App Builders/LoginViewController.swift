@@ -100,7 +100,8 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     
     //MARK: Helper Functions
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
         self.view.endEditing(true)
         return false
     }
@@ -134,7 +135,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         let tabVC = UITabBarController();
         
         let mainVC = MainPageViewController();
-        let groupVC = GroupViewController(nibName:"GroupViewController", bundle:nil);
+        let groupVC = GroupViewController();//nibName:"GroupViewController", bundle:nil);
         let messageVC = MessagingViewController(nibName:"MessagingViewController", bundle:nil);
         let settingsVC = SettingsViewController(nibName:"SettingsViewController", bundle:nil);
         
