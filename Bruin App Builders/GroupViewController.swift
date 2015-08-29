@@ -17,7 +17,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     let searchBar : UISearchBar = UISearchBar()
     private let kCellReuse : String = "PackCell"
     private let kCellheaderReuse : String = "PackHeader"
-    
+    var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,15 +34,25 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         searchBar.barStyle = UIBarStyle.Black
         self.view.addSubview(searchBar)
         
-        var collectionView =   UICollectionView(frame: CGRectMake(0, 70, self.view.frame.width , self.view.frame.height -         self.tabBarController!.tabBar.frame.height - 70), collectionViewLayout:UICollectionViewLayout())
-        collectionView.delegate      =   self
-        collectionView.dataSource    =   self
-        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.backgroundColor = UIColor.clearColor()
-        self.view.addSubview(collectionView)
+     
+        let height: CGFloat = self.view.frame.height-self.tabBarController!.tabBar.frame.height-70;
+        var frame: CGRect = CGRectMake(0, 70, self.view.frame.width, height);
+        self.collectionView = UICollectionView(frame:frame, collectionViewLayout: UICollectionViewFlowLayout());
+
+        self.collectionView.delegate      =   self
+        self.collectionView.dataSource    =   self
+        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        self.collectionView.contentSize = CGSizeMake(100, 100);
+
+        self.collectionView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(self.collectionView)
 
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.collectionView.reloadData();
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,16 +68,19 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         //this was all me.
     }
     
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
         
-        var textLabel = UILabel(frame: CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height))
+        var textLabel = UILabel(frame: CGRectMake(10, 10, cell.frame.size.width, cell.frame.size.height))
         textLabel.textAlignment = NSTextAlignment.Center
         textLabel.textColor = UIColor.whiteColor()
         textLabel.text = "Cell \(indexPath.row)"
+        textLabel.sizeToFit();
         cell.contentView.addSubview(textLabel)
         cell.backgroundColor = UIColor.redColor()
+        cell.sizeToFit();
         
         return cell
     }
@@ -79,7 +92,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
     }
-    
+   
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
         println("cell \(indexPath)")
