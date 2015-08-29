@@ -61,6 +61,9 @@ class MessagingToAPersonViewController: UIViewController {
         
     }
     
+    @IBAction func goBack() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBOutlet weak var typingANewMessage: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint2: NSLayoutConstraint!

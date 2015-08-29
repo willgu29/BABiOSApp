@@ -24,6 +24,8 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         wrapper.delegate = self;
         activityIND.hidden = true
         // Do any additional setup after loading the view.
+        self.usernameText.delegate = self
+        self.passwordText.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,20 +90,15 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         presentViewController(createTabBarVC(), animated: true, completion: nil)
     }
     
-    
-    
-    
-    
     @IBAction func signUp(sender: AnyObject) {
         //use igrouply and help the user sign up
     }
-    
-    
     
     //MARK: Helper Functions
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
+        //textField.resignFirstResponder()
         self.view.endEditing(true)
         return false
     }
@@ -130,12 +127,11 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         return false
     }
     
-    
     func createTabBarVC() -> UITabBarController {
         let tabVC = UITabBarController();
         
         let mainVC = MainPageViewController();
-        let groupVC = GroupViewController();//nibName:"GroupViewController", bundle:nil);
+        let groupVC = GroupViewController();
         let messageVC = MessagingViewController(nibName:"MessagingViewController", bundle:nil);
         let settingsVC = SettingsViewController(nibName:"SettingsViewController", bundle:nil);
         

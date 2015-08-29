@@ -10,9 +10,11 @@ import UIKit
 
 class GroupViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    var searchActive : Bool = false
+    var filtered:[String] = []
     var arrayOfGroups = ["iOS", "Android", "Nodejs"]
     let pageHeader   = UILabel(frame: CGRectMake(0, 0, 200, 21))
-    let searchingPeopleBar : UISearchBar = UISearchBar()
+    let searchBar : UISearchBar = UISearchBar()
     private let kCellReuse : String = "PackCell"
     private let kCellheaderReuse : String = "PackHeader"
     
@@ -27,10 +29,10 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         pageHeader.textAlignment = NSTextAlignment.Center
         self.view.addSubview(pageHeader)
         
-        searchingPeopleBar.frame = CGRectMake(0, 50, self.view.frame.width, 20)
-        searchingPeopleBar.placeholder = "Search in Groups"
-        searchingPeopleBar.barStyle = UIBarStyle.Black
-        self.view.addSubview(searchingPeopleBar)
+        searchBar.frame = CGRectMake(0, 50, self.view.frame.width, 20)
+        searchBar.placeholder = "Search in Groups"
+        searchBar.barStyle = UIBarStyle.Black
+        self.view.addSubview(searchBar)
         
         var collectionView =   UICollectionView(frame: CGRectMake(0, 70, self.view.frame.width , self.view.frame.height -         self.tabBarController!.tabBar.frame.height - 70), collectionViewLayout:UICollectionViewLayout())
         collectionView.delegate      =   self
@@ -70,9 +72,9 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         return cell
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1  // Number of section
-    }
+//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+//        return 1  // Number of section
+//    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
@@ -98,4 +100,36 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
 //        let margin  = (frame.width - 90 * 3) / 6.0
 //        return UIEdgeInsetsMake(10, margin, 10, margin) // margin between cells
 //    }
+    
+    //MARK: Search Bar functions
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filtered = arrayOfGroups.filter({ (text) -> Bool in
+            let tmp: NSString = text
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        if(searchBar.text == ""){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+      //  self.collectionView.reloadData()
+    }
 }
