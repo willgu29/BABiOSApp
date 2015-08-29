@@ -12,22 +12,29 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
 {
     var searchActive : Bool = false
     var filtered:[String] = []
-    var arrayOfGroups = ["iOS", "Android", "Nodejs"]
+    var arrayOfGroups = ["iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web"]
     let pageHeader   = UILabel(frame: CGRectMake(0, 0, 200, 21))
     let searchBar : UISearchBar = UISearchBar()
-    private let kCellReuse : String = "PackCell"
-    private let kCellheaderReuse : String = "PackHeader"
     var collectionView: UICollectionView!
+    var button: UIButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        button.frame = CGRectMake(self.view.frame.width - 50, 0, 50, 50)
+        button.backgroundColor = UIColor.magentaColor()
+        button.setTitle("➕", forState: UIControlState.Normal)
+        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.insertSubview(self.button, aboveSubview: self.pageHeader)
+
         pageHeader.frame = CGRectMake(0, 0, self.view.frame.width, 50)
         pageHeader.backgroundColor = UIColor.magentaColor()
         pageHeader.text = "Groups"
         pageHeader.textColor = UIColor.yellowColor()
         pageHeader.font = UIFont(name: "AmericanTypewriter", size: 35)
         pageHeader.textAlignment = NSTextAlignment.Center
-        self.view.addSubview(pageHeader)
+        self.view.insertSubview(pageHeader, belowSubview: button)
+        self.view.sendSubviewToBack(self.pageHeader)
         
         searchBar.frame = CGRectMake(0, 50, self.view.frame.width, 20)
         searchBar.placeholder = "Search in Groups"
@@ -73,46 +80,53 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
         
-        var textLabel = UILabel(frame: CGRectMake(10, 10, cell.frame.size.width, cell.frame.size.height))
+        var textLabel = UILabel(frame: CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height))
         textLabel.textAlignment = NSTextAlignment.Center
         textLabel.textColor = UIColor.whiteColor()
-        textLabel.text = "Cell \(indexPath.row)"
+        textLabel.text = arrayOfGroups[indexPath.row]
         textLabel.sizeToFit();
         cell.contentView.addSubview(textLabel)
-        cell.backgroundColor = UIColor.redColor()
+        cell.backgroundColor = UIColor.blackColor()
         cell.sizeToFit();
         
         return cell
     }
     
-//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-//        return 1  // Number of section
-//    }
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1  // Number of section
+    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return arrayOfGroups.count
     }
    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: false)
-        println("cell \(indexPath)")
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        //println("cell \(indexPath)")
     }
     
-//
-//    // MARK: UICollectionViewDelegateFlowLayout
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        return CGSize(width: 90, height: 90) // The size of one cell
-//    }
-//    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSizeMake(self.view.frame.width, 90)  // Header size
-//    }
-//    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//        let frame : CGRect = self.view.frame
-//        let margin  = (frame.width - 90 * 3) / 6.0
-//        return UIEdgeInsetsMake(10, margin, 10, margin) // margin between cells
-//    }
+
+    // MARK: UICollectionViewDelegateFlowLayout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 90, height: 90) // The size of one cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSizeMake(self.view.frame.width, 10)  // Header size
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        let frame : CGRect = self.view.frame
+        let margin  = (frame.width - 90 * 3) / 6.0
+        return UIEdgeInsetsMake(10, margin, 10, margin) // margin between cells
+    }
+    
+    // MARK: buttonAction
+    func buttonAction(sender:UIButton!)
+    {
+        //println("Button tapped")
+        presentViewController(AddAGroupRequestViewController(nibName:"AddAGroupRequestViewController", bundle:nil), animated: true, completion: nil)
+    }
     
     //MARK: Search Bar functions
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -139,10 +153,12 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
             return range.location != NSNotFound
         })
         if(searchBar.text == ""){
-            searchActive = false;
+            searchActive = false
         } else {
-            searchActive = true;
+            searchActive = true
         }
-      //  self.collectionView.reloadData()
+        self.collectionView.reloadData()
     }
+
+    
 }

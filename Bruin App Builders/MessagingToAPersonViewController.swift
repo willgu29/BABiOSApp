@@ -61,6 +61,11 @@ class MessagingToAPersonViewController: UIViewController {
         
     }
     
+    func send(message: String)
+    {
+        
+    }
+    
     @IBAction func goBack() {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -73,6 +78,7 @@ class MessagingToAPersonViewController: UIViewController {
         if (typingANewMessage.text != nil)
         {
             newMessage = typingANewMessage.text!
+            send(newMessage)
         }
         typingANewMessage.text = ""
     }

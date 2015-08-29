@@ -72,6 +72,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //println("You selected cell #\(indexPath.row)!")
         searchBar.resignFirstResponder()
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
