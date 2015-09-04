@@ -101,18 +101,17 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     func initialize()
     {
-        pageHeader.frame = CGRectMake(0, 0, self.view.frame.width, 50)
-        pageHeader.backgroundColor = UIColor.blueColor()
+        pageHeader.frame = CGRectMake(0, 8, self.view.frame.width, 50)
+        pageHeader.backgroundColor = UIColor.clearColor()
         pageHeader.text = "People"
-        pageHeader.textColor = UIColor.yellowColor()
-        pageHeader.font = UIFont(name: "AmericanTypewriter", size: 35)
+        pageHeader.textColor = UIColor.blackColor()
         pageHeader.textAlignment = NSTextAlignment.Center
         self.view.addSubview(pageHeader)
         
         searchBar.frame = CGRectMake(0, 50, self.view.frame.width, 20)
         searchBar.delegate = self
         searchBar.placeholder = "Search in People"
-        searchBar.barStyle = UIBarStyle.Black
+        searchBar.barStyle = UIBarStyle.Default
         searchBar.showsCancelButton = true
         self.view.addSubview(searchBar)
         

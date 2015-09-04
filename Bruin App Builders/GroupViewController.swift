@@ -10,7 +10,7 @@ import UIKit
 
 class GroupViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    var arrayOfGroups = ["iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web","iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web","iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web"]
+    var arrayOfGroups = ["iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web","Hardware"]
     let pageHeader = UILabel()
     var collectionView: UICollectionView!
     var button: UIButton = UIButton()
@@ -23,7 +23,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.collectionView.reloadData();
+        //self.collectionView.reloadData();
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,7 +99,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     func initButton()
     {
         button.frame = CGRectMake(self.view.frame.width - 50, 0, 50, 50)
-        button.backgroundColor = UIColor.blueColor()
+        button.backgroundColor = UIColor.clearColor()
         button.setTitle("➕", forState: UIControlState.Normal)
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.insertSubview(self.button, aboveSubview: self.pageHeader)
@@ -107,10 +107,9 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     func initPageHeader()
     {
         pageHeader.frame = CGRectMake(0, 0, self.view.frame.width, 50)
-        pageHeader.backgroundColor = UIColor.blueColor()
+        pageHeader.backgroundColor = UIColor.clearColor()
         pageHeader.text = "Groups"
-        pageHeader.textColor = UIColor.yellowColor()
-        pageHeader.font = UIFont(name: "AmericanTypewriter", size: 35)
+        pageHeader.textColor = UIColor.blackColor()
         pageHeader.textAlignment = NSTextAlignment.Center
         self.view.insertSubview(pageHeader, belowSubview: button)
         self.view.sendSubviewToBack(self.pageHeader)

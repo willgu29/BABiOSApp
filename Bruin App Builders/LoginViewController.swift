@@ -16,25 +16,23 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var activityIND: UIActivityIndicatorView!
     let wrapper = APIWrapper();
-    let panRec = UIPanGestureRecognizer()
-    var moviePlayer: MPMoviePlayerController?
-    func draggedView(sender:UIPanGestureRecognizer){
-        //self.view.bringSubviewToFront(sender.view!)
-        var translation = sender.translationInView(self.view)
-        sender.view!.center = CGPointMake(sender.view!.center.x + translation.x,sender.view!.center.y)
-        // can only drag in x-direction
-        sender.setTranslation(CGPointZero, inView: self.view)
-    }
-    
+    let anim = CAKeyframeAnimation( keyPath:"transform" )
+
     //MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         wrapper.delegate = self;
-        activityIND.hidden = true
-        // Do any additional setup after loading the view.
+        activityIND.hidesWhenStopped = true
         self.usernameText.delegate = self
         self.passwordText.delegate = self
+        self.anim.values = [
+            NSValue( CATransform3D:CATransform3DMakeTranslation(-5, 0, 0 ) ),
+            NSValue( CATransform3D:CATransform3DMakeTranslation( 5, 0, 0 ) )
+        ]
+        anim.autoreverses = true
+        anim.repeatCount = 2
+        anim.duration = 7/100
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +51,6 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     }
     
     override func viewDidDisappear(animated: Bool) {
-        activityIND.hidden = true
         activityIND.stopAnimating()
         passwordText.text = ""
         usernameText.text = ""
@@ -68,7 +65,17 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
             presentViewController(createTabBarVC(), animated: true, completion: nil)
         } else {
             errorMessageLabel.text = statusResult;
+            if statusResult.hasSuffix("email.")
+            {
+                usernameText.layer.addAnimation( anim, forKey:nil)
+            }
+            else
+            {
+                passwordText.layer.addAnimation( anim, forKey:nil)
+
+            }
         }
+        activityIND.stopAnimating()
     }
   
     
@@ -77,25 +84,27 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     
     @IBAction func goToMainViewController(sender: UIButton)
     {
-        if (usernameText.text == "")
-        {
-            errorMessageLabel.text = "Please enter a email"
-        }
-        else if (passwordText.text == "")
-        {
-            errorMessageLabel.text = "Please enter a password"
-        }
-        else if isUserNameWrong(usernameText.text)
-        {
-            errorMessageLabel.text = "Please enter a valid email"
-        }
-        else
-        {
-            activityIND.hidden = false
+//        if (usernameText.text == "")
+//        {
+//            errorMessageLabel.text = "Please enter a email"
+//            usernameText.layer.addAnimation( anim, forKey:nil)
+//        }
+//        else if (passwordText.text == "")
+//        {
+//            errorMessageLabel.text = "Please enter a password"
+//            passwordText.layer.addAnimation( anim, forKey:nil)
+//
+//        }
+//        else if isUserNameWrong(usernameText.text)
+//        {
+//            errorMessageLabel.text = "Please enter a valid email"
+//            usernameText.layer.addAnimation( anim, forKey:nil)
+//        }
+//        else
+      //  {
             activityIND.startAnimating()
             wrapper.postLogin(usernameText.text, andPassword: passwordText.text);
-        }
-        
+       // }
     }
 
     @IBAction func skipButton(sender: UIButton)
@@ -131,33 +140,28 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         return false
     }
     
-    func isPasswordWrong(pw : String) -> Bool
-    {
-        if (count(pw) < 6)
-        {
-            return true
-        }
-        return false
-    }
-    
     func createTabBarVC() -> UITabBarController {
         let tabVC = UITabBarController();
         
+        let eventsVC = EventViewController(nibName:"EventViewController", bundle:nil);
         let mainVC = MainPageViewController();
         let groupVC = GroupViewController();
         let messageVC = MessagingViewController(nibName:"MessagingViewController", bundle:nil);
         let settingsVC = SettingsViewController(nibName:"SettingsViewController", bundle:nil);
         
+        eventsVC.title = "Events"
         mainVC.title = "People";
         groupVC.title = "Groups";
         messageVC.title = "Messages";
         settingsVC.title = "Setting";
         
-        
-        let arrayOfVCs = [mainVC, groupVC, messageVC, settingsVC];
+        let arrayOfVCs = [ mainVC, eventsVC, groupVC, messageVC, settingsVC];
         
         tabVC.viewControllers = arrayOfVCs;
         return tabVC;
     }
    
+    
+    
+    
 }
