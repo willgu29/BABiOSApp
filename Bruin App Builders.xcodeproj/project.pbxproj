@@ -51,6 +51,7 @@
 		5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingToAPersonViewController.xib; sourceTree = "<group>"; };
 		5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAGroupRequestViewController.swift; sourceTree = "<group>"; };
 		5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAGroupRequestViewController.xib; sourceTree = "<group>"; };
+		5CEBCE6D1B971ABD00F0FCC4 /* Foo Fighters. Walk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Foo Fighters. Walk.mp4"; path = "../../../../Documents/fav song videos/Foo Fighters. Walk.mp4"; sourceTree = "<group>"; };
 		84C636791B83F36900C53212 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		84C6367B1B83F38400C53212 /* MessagingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingViewController.xib; sourceTree = "<group>"; };
 		84C6367D1B83FA1500C53212 /* Bruin App Builders-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bruin App Builders-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		84EAAFF01B755FC800D7E59C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5CEBCE6D1B971ABD00F0FCC4 /* Foo Fighters. Walk.mp4 */,
 				5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */,
 				5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */,
 				5C8F7B7C1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDelegate {
 
@@ -15,7 +16,15 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var activityIND: UIActivityIndicatorView!
     let wrapper = APIWrapper();
-    
+    let panRec = UIPanGestureRecognizer()
+    var moviePlayer: MPMoviePlayerController?
+    func draggedView(sender:UIPanGestureRecognizer){
+        //self.view.bringSubviewToFront(sender.view!)
+        var translation = sender.translationInView(self.view)
+        sender.view!.center = CGPointMake(sender.view!.center.x + translation.x,sender.view!.center.y)
+        // can only drag in x-direction
+        sender.setTranslation(CGPointZero, inView: self.view)
+    }
     
     //MARK: View Life Cycle
     
@@ -31,6 +40,10 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
     }
     
     //Used to remove the keyboard when not in use
@@ -146,4 +159,5 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         tabVC.viewControllers = arrayOfVCs;
         return tabVC;
     }
+   
 }

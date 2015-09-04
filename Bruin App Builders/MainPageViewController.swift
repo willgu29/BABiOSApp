@@ -19,28 +19,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pageHeader.frame = CGRectMake(0, 0, self.view.frame.width, 50)
-        pageHeader.backgroundColor = UIColor.magentaColor()
-        pageHeader.text = "People"
-        pageHeader.textColor = UIColor.yellowColor()
-        pageHeader.font = UIFont(name: "AmericanTypewriter", size: 35)
-        pageHeader.textAlignment = NSTextAlignment.Center
-        self.view.addSubview(pageHeader)
-        
-        searchBar.frame = CGRectMake(0, 50, self.view.frame.width, 20)
-        searchBar.delegate = self
-        searchBar.placeholder = "Search in People"
-        searchBar.barStyle = UIBarStyle.Black
-        searchBar.showsCancelButton = true
-        self.view.addSubview(searchBar)
-        
-        tableView.frame         =   CGRectMake(0, 70, self.view.frame.width , self.view.frame.height -         self.tabBarController!.tabBar.frame.height - 70);
-        tableView.delegate      =   self
-        tableView.dataSource    =   self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.view.addSubview(tableView)
-        
+        initialize()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +52,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         //println("You selected cell #\(indexPath.row)!")
         searchBar.resignFirstResponder()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        println("You selected cell #\(indexPath.row)! whose value is \(items[indexPath.row])")
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -117,6 +97,30 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
+    }
+    
+    func initialize()
+    {
+        pageHeader.frame = CGRectMake(0, 0, self.view.frame.width, 50)
+        pageHeader.backgroundColor = UIColor.blueColor()
+        pageHeader.text = "People"
+        pageHeader.textColor = UIColor.yellowColor()
+        pageHeader.font = UIFont(name: "AmericanTypewriter", size: 35)
+        pageHeader.textAlignment = NSTextAlignment.Center
+        self.view.addSubview(pageHeader)
+        
+        searchBar.frame = CGRectMake(0, 50, self.view.frame.width, 20)
+        searchBar.delegate = self
+        searchBar.placeholder = "Search in People"
+        searchBar.barStyle = UIBarStyle.Black
+        searchBar.showsCancelButton = true
+        self.view.addSubview(searchBar)
+        
+        tableView.frame         =   CGRectMake(0, 70, self.view.frame.width , self.view.frame.height -         self.tabBarController!.tabBar.frame.height - 70);
+        tableView.delegate      =   self
+        tableView.dataSource    =   self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.view.addSubview(tableView)
     }
 
 }

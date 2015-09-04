@@ -10,52 +10,18 @@ import UIKit
 
 class GroupViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    var searchActive : Bool = false
-    var filtered:[String] = []
-    var arrayOfGroups = ["iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web"]
-    let pageHeader   = UILabel(frame: CGRectMake(0, 0, 200, 21))
-    let searchBar : UISearchBar = UISearchBar()
+    var arrayOfGroups = ["iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web","iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web","iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web"]
+    let pageHeader = UILabel()
     var collectionView: UICollectionView!
     var button: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        button.frame = CGRectMake(self.view.frame.width - 50, 0, 50, 50)
-        button.backgroundColor = UIColor.magentaColor()
-        button.setTitle("➕", forState: UIControlState.Normal)
-        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.insertSubview(self.button, aboveSubview: self.pageHeader)
-
-        pageHeader.frame = CGRectMake(0, 0, self.view.frame.width, 50)
-        pageHeader.backgroundColor = UIColor.magentaColor()
-        pageHeader.text = "Groups"
-        pageHeader.textColor = UIColor.yellowColor()
-        pageHeader.font = UIFont(name: "AmericanTypewriter", size: 35)
-        pageHeader.textAlignment = NSTextAlignment.Center
-        self.view.insertSubview(pageHeader, belowSubview: button)
-        self.view.sendSubviewToBack(self.pageHeader)
-        
-        searchBar.frame = CGRectMake(0, 50, self.view.frame.width, 20)
-        searchBar.placeholder = "Search in Groups"
-        searchBar.barStyle = UIBarStyle.Black
-        self.view.addSubview(searchBar)
-        
-     
-        let height: CGFloat = self.view.frame.height-self.tabBarController!.tabBar.frame.height-70;
-        var frame: CGRect = CGRectMake(0, 70, self.view.frame.width, height);
-        self.collectionView = UICollectionView(frame:frame, collectionViewLayout: UICollectionViewFlowLayout());
-
-        self.collectionView.delegate      =   self
-        self.collectionView.dataSource    =   self
-        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        self.collectionView.contentSize = CGSizeMake(100, 100);
-
-        self.collectionView.backgroundColor = UIColor.clearColor()
-        self.view.addSubview(self.collectionView)
-
+        initButton()
+        initPageHeader()
+        initCollectionView()
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         self.collectionView.reloadData();
     }
@@ -79,7 +45,6 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
-        
         var textLabel = UILabel(frame: CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height))
         textLabel.textAlignment = NSTextAlignment.Center
         textLabel.textColor = UIColor.whiteColor()
@@ -88,7 +53,6 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.contentView.addSubview(textLabel)
         cell.backgroundColor = UIColor.blackColor()
         cell.sizeToFit();
-        
         return cell
     }
     
@@ -97,12 +61,11 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayOfGroups.count
+        return arrayOfGroups.count;
     }
    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-        //println("cell \(indexPath)")
     }
     
 
@@ -121,44 +84,47 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         return UIEdgeInsetsMake(10, margin, 10, margin) // margin between cells
     }
     
-    // MARK: buttonAction
+    // MARK: "+" button tapped
     func buttonAction(sender:UIButton!)
     {
-        //println("Button tapped")
         presentViewController(AddAGroupRequestViewController(nibName:"AddAGroupRequestViewController", bundle:nil), animated: true, completion: nil)
     }
     
-    //MARK: Search Bar functions
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
     
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false;
+    //Mark: Helperfunctions
+    func initButton()
+    {
+        button.frame = CGRectMake(self.view.frame.width - 50, 0, 50, 50)
+        button.backgroundColor = UIColor.blueColor()
+        button.setTitle("➕", forState: UIControlState.Normal)
+        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.insertSubview(self.button, aboveSubview: self.pageHeader)
     }
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
+    func initPageHeader()
+    {
+        pageHeader.frame = CGRectMake(0, 0, self.view.frame.width, 50)
+        pageHeader.backgroundColor = UIColor.blueColor()
+        pageHeader.text = "Groups"
+        pageHeader.textColor = UIColor.yellowColor()
+        pageHeader.font = UIFont(name: "AmericanTypewriter", size: 35)
+        pageHeader.textAlignment = NSTextAlignment.Center
+        self.view.insertSubview(pageHeader, belowSubview: button)
+        self.view.sendSubviewToBack(self.pageHeader)
     }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
+    func initCollectionView()
+    {
+        let height: CGFloat = self.view.frame.height - self.tabBarController!.tabBar.frame.height - 50
+        var frame: CGRect = CGRectMake(0, 50, self.view.frame.width, height);
+        self.collectionView = UICollectionView(frame:frame, collectionViewLayout: UICollectionViewFlowLayout());
+        self.collectionView.delegate      =   self
+        self.collectionView.dataSource    =   self
+        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        self.collectionView.contentSize = CGSizeMake(100, 100);
+        self.collectionView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(self.collectionView)
     }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        filtered = arrayOfGroups.filter({ (text) -> Bool in
-            let tmp: NSString = text
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-            return range.location != NSNotFound
-        })
-        if(searchBar.text == ""){
-            searchActive = false
-        } else {
-            searchActive = true
-        }
-        self.collectionView.reloadData()
-    }
-
-    
 }
