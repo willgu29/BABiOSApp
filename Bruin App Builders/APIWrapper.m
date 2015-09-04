@@ -15,9 +15,15 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    manager.responseSerializer = responseSerializer;
+
     NSDictionary *parameters = @{@"email": email, @"password": password};
     [manager POST:API_POST_LOGIN parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        if ([responseObject isKindOfClass:[NSString class]]) {
+            responseObject = @{@"message" : @"/"};
+        }
         [_delegate loginResponse:responseObject];
          
         

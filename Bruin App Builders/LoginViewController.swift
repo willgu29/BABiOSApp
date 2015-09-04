@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     
     func loginResponse(status: [NSObject : AnyObject]!) {
         let status: NSDictionary = status as NSDictionary;
-        let statusResult: String = status.valueForKey("info") as! String;
+        let statusResult: String = status.valueForKey("message") as! String;
         if (statusResult == "/") {
             presentViewController(createTabBarVC(), animated: true, completion: nil)
         } else {
@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         }
         
     }
-    
+
     @IBAction func skipButton(sender: UIButton)
     {
         presentViewController(createTabBarVC(), animated: true, completion: nil)
