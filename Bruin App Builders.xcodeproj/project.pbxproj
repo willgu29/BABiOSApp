@@ -11,6 +11,8 @@
 		5C3473D21B9A3F4300B3B7B1 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3473D01B9A3F4300B3B7B1 /* EventViewController.xib */; };
 		5C3473D51B9A418E00B3B7B1 /* EventsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */; };
 		5C3473D61B9A418E00B3B7B1 /* EventsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */; };
+		5C3473DD1B9A5A4A00B3B7B1 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3473DB1B9A5A4A00B3B7B1 /* EditProfileViewController.swift */; };
+		5C3473DE1B9A5A4A00B3B7B1 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3473DC1B9A5A4A00B3B7B1 /* EditProfileViewController.xib */; };
 		5C4ED6A91B848BDC0060CD14 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */; };
 		5C4ED6AA1B848BDC0060CD14 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */; };
 		5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C847B271B7ECC49001DC747 /* GroupViewController.swift */; };
@@ -49,6 +51,8 @@
 		5C3473D01B9A3F4300B3B7B1 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
 		5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableCell.swift; sourceTree = "<group>"; };
 		5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableCell.xib; sourceTree = "<group>"; };
+		5C3473DB1B9A5A4A00B3B7B1 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		5C3473DC1B9A5A4A00B3B7B1 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		5C847B271B7ECC49001DC747 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
@@ -135,11 +139,9 @@
 				5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */,
 				5C847B271B7ECC49001DC747 /* GroupViewController.swift */,
 				84C636791B83F36900C53212 /* MessagingViewController.swift */,
+				84C6367B1B83F38400C53212 /* MessagingViewController.xib */,
 				5C3473CF1B9A3F4300B3B7B1 /* EventViewController.swift */,
 				5C3473D01B9A3F4300B3B7B1 /* EventViewController.xib */,
-				5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */,
-				5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */,
-				84C6367B1B83F38400C53212 /* MessagingViewController.xib */,
 				5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */,
 				5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */,
 				84EAAFFC1B755FC800D7E59C /* Images.xcassets */,
@@ -163,6 +165,10 @@
 				5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */,
 				5C8F7B781B8AB69600EBAC46 /* PersonInfoViewController.swift */,
 				5C8F7B791B8AB69600EBAC46 /* PersonInfoViewController.xib */,
+				5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */,
+				5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */,
+				5C3473DB1B9A5A4A00B3B7B1 /* EditProfileViewController.swift */,
+				5C3473DC1B9A5A4A00B3B7B1 /* EditProfileViewController.xib */,
 				84EAAFF11B755FC800D7E59C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -277,6 +283,7 @@
 			files = (
 				5CEBCE671B92223600F0FCC4 /* AddAGroupRequestViewController.xib in Resources */,
 				5C3473D21B9A3F4300B3B7B1 /* EventViewController.xib in Resources */,
+				5C3473DE1B9A5A4A00B3B7B1 /* EditProfileViewController.xib in Resources */,
 				5C3473D61B9A418E00B3B7B1 /* EventsTableCell.xib in Resources */,
 				5C8F7B7F1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib in Resources */,
 				84C6367C1B83F38400C53212 /* MessagingViewController.xib in Resources */,
@@ -340,6 +347,7 @@
 				84EAB0171B75608500D7E59C /* LoginViewController.swift in Sources */,
 				5C8F7B7E1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift in Sources */,
 				5C3473D11B9A3F4300B3B7B1 /* EventViewController.swift in Sources */,
+				5C3473DD1B9A5A4A00B3B7B1 /* EditProfileViewController.swift in Sources */,
 				84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */,
 				5C8F7B7A1B8AB69600EBAC46 /* PersonInfoViewController.swift in Sources */,
 				84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */,
