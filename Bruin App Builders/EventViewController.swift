@@ -12,21 +12,19 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet var tableView: UITableView!
     
-    var tableData: [String] = ["Ferrari", "BMW", "Mitsubishi", "Lambo"]
+    var tableData: [String] = ["Ferrari", "BMW", "Mitsubishi", "Lambo","Ferrari", "BMW", "Mitsubishi", "Lambo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         var nib = UINib(nibName: "EventsTableCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
-        tableView.delegate      =   self
-        tableView.dataSource    =   self
         //tableView.registerClass(EventsTableCell.self, forCellReuseIdentifier: "cell")
        // tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.bounces = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

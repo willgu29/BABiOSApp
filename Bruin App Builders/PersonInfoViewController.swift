@@ -43,6 +43,10 @@ class PersonInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         return self.tableView.frame.height/5
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func goBack() {

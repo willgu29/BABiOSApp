@@ -46,7 +46,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
         var textLabel = UILabel(frame: CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height))
-        textLabel.textAlignment = NSTextAlignment.Center
+        textLabel.textAlignment = NSTextAlignment.Center //does it work
         textLabel.textColor = UIColor.whiteColor()
         textLabel.text = arrayOfGroups[indexPath.row]
         textLabel.sizeToFit();
@@ -66,6 +66,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        presentViewController(SpecificGroupViewController(nibName: "SpecificGroupViewController", bundle: nil), animated: true, completion: nil)
     }
     
 

@@ -21,16 +21,22 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         initialize()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        //Doesnt work
+        
         var destinationVC : PersonInfoViewController = segue.destinationViewController as! PersonInfoViewController
-//        let cell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow()!)
-//        var namely : String = ((cell!.textLabel)?.text)!
+        let cell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow()!)
+        var namely : String = ((cell!.textLabel)?.text)!
+        println(namely)
+        destinationVC.nameLabel.text = "nxcmdx"
         
     }
     
@@ -56,10 +62,17 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //println("You selected cell #\(indexPath.row)!")
         searchBar.resignFirstResponder()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        println("You selected cell #\(indexPath.row)! whose value is \(items[indexPath.row])")
+        //println("You selected cell #\(indexPath.row)! whose value is \(items[indexPath.row])")
+//        if searchBar.text == nil || searchBar.text == ""
+//        {
+//            //use items
+//        }
+//        else
+//        {
+//            //use filtered
+//        }
         presentViewController(PersonInfoViewController(nibName: "PersonInfoViewController", bundle: nil), animated: true, completion: nil)
     }
     
@@ -127,6 +140,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate      =   self
         tableView.dataSource    =   self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.bounces = false
         self.view.addSubview(tableView)
     }
 
