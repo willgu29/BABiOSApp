@@ -20,7 +20,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
         tableView.delegate      =   self
         tableView.dataSource    =   self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //tableView.registerClass(EventsTableCell.self, forCellReuseIdentifier: "cell")
        // tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
@@ -35,7 +35,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell : EventsTableCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! EventsTableCell
+        var cell : EventsTableCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! EventsTableCell;
         cell.cellLabel.text = tableData[indexPath.row]
         return cell
     }

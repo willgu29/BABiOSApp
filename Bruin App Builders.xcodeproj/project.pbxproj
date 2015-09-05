@@ -111,6 +111,45 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		842237D61B9ABE3B008CDE22 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */,
+				5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		842237D71B9ABE50008CDE22 /* MainNavigationVCs */ = {
+			isa = PBXGroup;
+			children = (
+				5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */,
+				5C847B271B7ECC49001DC747 /* GroupViewController.swift */,
+				84C636791B83F36900C53212 /* MessagingViewController.swift */,
+				84C6367B1B83F38400C53212 /* MessagingViewController.xib */,
+				5C3473CF1B9A3F4300B3B7B1 /* EventViewController.swift */,
+				5C3473D01B9A3F4300B3B7B1 /* EventViewController.xib */,
+				5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */,
+				5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */,
+			);
+			name = MainNavigationVCs;
+			sourceTree = "<group>";
+		};
+		842237D81B9ABE68008CDE22 /* SecondaryVCs */ = {
+			isa = PBXGroup;
+			children = (
+				5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */,
+				5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */,
+				5C8F7B7C1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift */,
+				5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */,
+				5C8F7B781B8AB69600EBAC46 /* PersonInfoViewController.swift */,
+				5C8F7B791B8AB69600EBAC46 /* PersonInfoViewController.xib */,
+				5C3473DB1B9A5A4A00B3B7B1 /* EditProfileViewController.swift */,
+				5C3473DC1B9A5A4A00B3B7B1 /* EditProfileViewController.xib */,
+			);
+			name = SecondaryVCs;
+			sourceTree = "<group>";
+		};
 		84EAAFE41B755FC800D7E59C = {
 			isa = PBXGroup;
 			children = (
@@ -134,16 +173,11 @@
 		84EAAFEF1B755FC800D7E59C /* Bruin App Builders */ = {
 			isa = PBXGroup;
 			children = (
+				842237D81B9ABE68008CDE22 /* SecondaryVCs */,
+				842237D71B9ABE50008CDE22 /* MainNavigationVCs */,
+				842237D61B9ABE3B008CDE22 /* CustomViews */,
 				84EAB0151B75608500D7E59C /* LoginViewController.swift */,
 				84EAB0161B75608500D7E59C /* LoginViewController.xib */,
-				5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */,
-				5C847B271B7ECC49001DC747 /* GroupViewController.swift */,
-				84C636791B83F36900C53212 /* MessagingViewController.swift */,
-				84C6367B1B83F38400C53212 /* MessagingViewController.xib */,
-				5C3473CF1B9A3F4300B3B7B1 /* EventViewController.swift */,
-				5C3473D01B9A3F4300B3B7B1 /* EventViewController.xib */,
-				5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */,
-				5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */,
 				84EAAFFC1B755FC800D7E59C /* Images.xcassets */,
 				84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */,
 				84EAAFF01B755FC800D7E59C /* Supporting Files */,
@@ -159,16 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				84EAAFF21B755FC800D7E59C /* AppDelegate.swift */,
-				5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */,
-				5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */,
-				5C8F7B7C1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift */,
-				5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */,
-				5C8F7B781B8AB69600EBAC46 /* PersonInfoViewController.swift */,
-				5C8F7B791B8AB69600EBAC46 /* PersonInfoViewController.xib */,
-				5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */,
-				5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */,
-				5C3473DB1B9A5A4A00B3B7B1 /* EditProfileViewController.swift */,
-				5C3473DC1B9A5A4A00B3B7B1 /* EditProfileViewController.xib */,
 				84EAAFF11B755FC800D7E59C /* Info.plist */,
 			);
 			name = "Supporting Files";
