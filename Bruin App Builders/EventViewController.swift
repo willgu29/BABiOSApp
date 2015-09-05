@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet var tableView: UITableView!
     
@@ -18,8 +18,10 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         var nib = UINib(nibName: "EventsTableCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
-      
+        tableView.delegate      =   self
+        tableView.dataSource    =   self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+       // tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +42,7 @@ class EventViewController: UIViewController {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("Row \(indexPath.row) selected")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
