@@ -163,7 +163,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         messageVC.title = "Messages";
         settingsVC.title = "Setting";
         
-        let arrayOfVCs = [ mainVC, eventsVC, groupVC, messageVC, settingsVC];
+        let arrayOfVCs = [ eventsVC, mainVC, groupVC, messageVC, settingsVC];
         
         tabVC.viewControllers = arrayOfVCs;
         return tabVC;

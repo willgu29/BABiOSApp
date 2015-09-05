@@ -27,6 +27,13 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationVC : PersonInfoViewController = segue.destinationViewController as! PersonInfoViewController
+//        let cell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow()!)
+//        var namely : String = ((cell!.textLabel)?.text)!
+        
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
@@ -53,7 +60,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         searchBar.resignFirstResponder()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         println("You selected cell #\(indexPath.row)! whose value is \(items[indexPath.row])")
-        
+        presentViewController(PersonInfoViewController(nibName: "PersonInfoViewController", bundle: nil), animated: true, completion: nil)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
