@@ -8,12 +8,10 @@
 
 import UIKit
 
-class AddAGroupRequestViewController: UIViewController {
+class AddAGroupRequestViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +19,13 @@ class AddAGroupRequestViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+       //details.becomeFirstResponder()
+        return false
+    }
+    
+    @IBOutlet var details: UITextView!
     @IBOutlet weak var nameOfTheGroup: UITextField!
 
     @IBAction func submitButton(sender: UIButton) {
@@ -43,5 +48,9 @@ class AddAGroupRequestViewController: UIViewController {
     }
     @IBOutlet weak var errorMessageLabel: UILabel!
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
     //Have a way to limit the number of requests a person can make.
 }

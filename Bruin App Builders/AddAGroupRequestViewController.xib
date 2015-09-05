@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAGroupRequestViewController" customModule="Bruin_App_Builders" customModuleProvider="target">
             <connections>
+                <outlet property="details" destination="2mA-E3-jLH" id="fxA-5e-7sv"/>
                 <outlet property="errorMessageLabel" destination="KvA-ix-Aae" id="aCS-1v-Zqb"/>
                 <outlet property="nameOfTheGroup" destination="nCu-8k-buV" id="8eC-BA-Pe3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -60,7 +61,7 @@
                     <items>
                         <navigationItem title="Want a new Group?" id="ylp-2h-cBs">
                             <barButtonItem key="leftBarButtonItem" style="plain" id="eEj-Y1-IaZ">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R9a-PL-y1t">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R9a-PL-y1t">
                                     <rect key="frame" x="-23" y="-15" width="71" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="&lt;">

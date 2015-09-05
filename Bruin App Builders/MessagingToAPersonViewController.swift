@@ -45,15 +45,10 @@ class MessagingToAPersonViewController: UIViewController {
     }
     
     func adjustingHeight(show:Bool, notification:NSNotification) {
-        // 1
         var userInfo = notification.userInfo!
-        // 2
         var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        // 3
         var animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
-        // 4
         var changeInHeight = (CGRectGetHeight(keyboardFrame) + 0) * (show ? 1 : -1)
-        //5
         UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
             self.bottomConstraint.constant += changeInHeight
             self.bottomConstraint2.constant += changeInHeight

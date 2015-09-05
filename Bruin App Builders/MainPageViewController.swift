@@ -53,6 +53,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         searchBar.resignFirstResponder()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         println("You selected cell #\(indexPath.row)! whose value is \(items[indexPath.row])")
+        
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

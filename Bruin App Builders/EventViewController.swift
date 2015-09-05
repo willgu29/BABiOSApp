@@ -18,7 +18,8 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         var nib = UINib(nibName: "EventsTableCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
-        
+      
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,13 +31,11 @@ class EventViewController: UIViewController {
         return self.tableData.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell 	{
-        
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         var cell : EventsTableCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! EventsTableCell
-        
         cell.cellLabel.text = tableData[indexPath.row]
         return cell
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -46,6 +45,5 @@ class EventViewController: UIViewController {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
     }
-
 }
 

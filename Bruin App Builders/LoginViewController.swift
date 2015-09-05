@@ -84,27 +84,27 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     
     @IBAction func goToMainViewController(sender: UIButton)
     {
-//        if (usernameText.text == "")
-//        {
-//            errorMessageLabel.text = "Please enter a email"
-//            usernameText.layer.addAnimation( anim, forKey:nil)
-//        }
-//        else if (passwordText.text == "")
-//        {
-//            errorMessageLabel.text = "Please enter a password"
-//            passwordText.layer.addAnimation( anim, forKey:nil)
-//
-//        }
-//        else if isUserNameWrong(usernameText.text)
-//        {
-//            errorMessageLabel.text = "Please enter a valid email"
-//            usernameText.layer.addAnimation( anim, forKey:nil)
-//        }
-//        else
-      //  {
+        if (usernameText.text == "")
+        {
+            errorMessageLabel.text = "Please enter a email"
+            usernameText.layer.addAnimation( anim, forKey:nil)
+        }
+        else if (passwordText.text == "")
+        {
+            errorMessageLabel.text = "Please enter a password"
+            passwordText.layer.addAnimation( anim, forKey:nil)
+
+        }
+        else if isUserNameWrong(usernameText.text)
+        {
+            errorMessageLabel.text = "Please enter a valid email"
+            usernameText.layer.addAnimation( anim, forKey:nil)
+        }
+        else
+        {
             activityIND.startAnimating()
             wrapper.postLogin(usernameText.text, andPassword: passwordText.text);
-       // }
+        }
     }
 
     @IBAction func skipButton(sender: UIButton)
