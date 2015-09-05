@@ -121,7 +121,15 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         //textField.resignFirstResponder()
-        self.view.endEditing(true)
+        if usernameText.isFirstResponder()
+        {
+            passwordText.becomeFirstResponder()
+        }
+        else
+        {
+            self.view.endEditing(true)
+            goToMainViewController(UIButton())
+        }
         return false
     }
     

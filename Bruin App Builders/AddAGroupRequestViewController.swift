@@ -20,8 +20,9 @@ class AddAGroupRequestViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-       //details.becomeFirstResponder()
+       // self.view.endEditing(true)
+        textField.resignFirstResponder()
+       details.becomeFirstResponder()
         return false
     }
     

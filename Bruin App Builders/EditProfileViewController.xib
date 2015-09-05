@@ -51,15 +51,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-KJ-itX">
-                    <rect key="frame" x="1" y="533" width="320" height="35"/>
-                    <state key="normal" title="Submit">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="submitButton:" destination="-1" eventType="touchUpInside" id="8QC-N0-y4o"/>
-                    </connections>
-                </button>
                 <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ro-Sd-fHg">
                     <rect key="frame" x="-2" y="0.0" width="323" height="44"/>
                     <items>
@@ -76,15 +67,15 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" style="plain" id="El1-uu-gtI">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bZh-ZY-umD">
-                                    <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                            <barButtonItem key="rightBarButtonItem" style="plain" id="oZE-jG-a4C">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h9i-KJ-itX">
+                                    <rect key="frame" x="239" y="382" width="61" height="35"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Cancel">
+                                    <state key="normal" title="Save">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="goBack" destination="-1" eventType="touchUpInside" id="M7M-UX-pSm"/>
+                                        <action selector="submitButton:" destination="-1" eventType="touchUpInside" id="8QC-N0-y4o"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -127,14 +118,8 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaA-ng-B9Z">
-                    <rect key="frame" x="0.0" y="301" width="321" height="90"/>
-                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x55-Th-Uox">
-                    <rect key="frame" x="-1" y="447" width="321" height="90"/>
+                    <rect key="frame" x="0.0" y="470" width="320" height="100"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -145,26 +130,32 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you want that others can help with?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8F-H5-m7l">
-                    <rect key="frame" x="0.0" y="260" width="319" height="33"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(separate with commas only (no spaces)) " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxX-nt-TUQ">
-                    <rect key="frame" x="0.0" y="275" width="319" height="33"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What can you offer people? " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uU4-0h-eef">
-                    <rect key="frame" x="0.0" y="404" width="319" height="33"/>
+                    <rect key="frame" x="1" y="427" width="319" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(separate with commas only (no spaces)) " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8b-rt-M94">
-                    <rect key="frame" x="0.0" y="419" width="319" height="33"/>
+                    <rect key="frame" x="1" y="442" width="319" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaA-ng-B9Z">
+                    <rect key="frame" x="0.0" y="318" width="320" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you want that others can help with?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8F-H5-m7l">
+                    <rect key="frame" x="0.0" y="277" width="319" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(separate with commas only (no spaces)) " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxX-nt-TUQ">
+                    <rect key="frame" x="0.0" y="292" width="319" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -184,7 +175,6 @@
                 <constraint firstItem="g9P-mO-BSd" firstAttribute="leading" secondItem="Aqv-Ff-MuC" secondAttribute="leading" id="ge7-CO-bUE"/>
                 <constraint firstItem="F8C-Cd-G3Y" firstAttribute="trailing" secondItem="XaA-ng-B9Z" secondAttribute="trailing" id="lzY-Um-Ydt"/>
                 <constraint firstItem="g9P-mO-BSd" firstAttribute="trailing" secondItem="XaA-ng-B9Z" secondAttribute="trailing" id="qdB-Cm-2va"/>
-                <constraint firstItem="F8C-Cd-G3Y" firstAttribute="trailing" secondItem="h9i-KJ-itX" secondAttribute="trailing" id="rZ5-dr-Nqu"/>
                 <constraint firstItem="XhE-Lv-po9" firstAttribute="trailing" secondItem="XaA-ng-B9Z" secondAttribute="trailing" id="wAW-MW-8QR"/>
                 <constraint firstItem="g9P-mO-BSd" firstAttribute="top" secondItem="688-3w-HD0" secondAttribute="bottom" constant="3" id="wsO-w1-va8"/>
                 <constraint firstItem="688-3w-HD0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="xDK-zb-82F"/>
