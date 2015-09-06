@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     @IBOutlet weak var activityIND: UIActivityIndicatorView!
     let wrapper = APIWrapper();
     let anim = CAKeyframeAnimation( keyPath:"transform" )
-
+    var checker = Checker()
     //MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
             passwordText.layer.addAnimation( anim, forKey:nil)
 
         }
-        else if isUserNameWrong(usernameText.text)
+        else if checker.isUserNameWrong(usernameText.text)
         {
             errorMessageLabel.text = "Please enter a valid email"
             usernameText.layer.addAnimation( anim, forKey:nil)
@@ -114,6 +114,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     
     @IBAction func signUp(sender: AnyObject) {
         //use igrouply and help the user sign up
+        presentViewController(SignUpViewController(nibName: "SignUpViewController", bundle : nil), animated: true, completion: nil)
     }
     
     //MARK: Helper Functions
@@ -129,21 +130,6 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         {
             self.view.endEditing(true)
             goToMainViewController(UIButton())
-        }
-        return false
-    }
-    
-    func isUserNameWrong(un : String) -> Bool
-    {
-        var twoParts = split(un) {$0 == "@"}
-        if (twoParts.count != 2)
-        {
-            return true
-        }
-        var dotChecker = split(twoParts[1]) {$0 == "."}
-        if dotChecker.count <= 1
-        {
-            return true
         }
         return false
     }

@@ -16,6 +16,7 @@ class AddAGroupRequestViewController: UIViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        image.image = UIImage(named: "suggestion-box-logo")
         // Dispose of any resources that can be recreated.
     }
     
@@ -32,26 +33,31 @@ class AddAGroupRequestViewController: UIViewController, UITextFieldDelegate {
     @IBAction func submitButton(sender: UIButton) {
         if (nameOfTheGroup.text == nil || nameOfTheGroup.text == "")
         {
-            errorMessageLabel.text = "Please enter a name"
+            var Alert : UIAlertView = UIAlertView(title: "SUBMISSION FAILED", message: "Please enter a name of the new group that you think should be present\nAdd Details (Optional)\nThanks", delegate: self, cancelButtonTitle: "Ok")
+            Alert.show()
+
         }
         else
         {
             //send it to will for him to check.
             //send him a report saying that the new group info has been sent to will
             //go back to groups page
-            errorMessageLabel.text = ""
+            
+            var Alert : UIAlertView = UIAlertView(title: "Group Suggestion Submitted", message: "Thank you", delegate: self, cancelButtonTitle: "Ok")
+            Alert.show()
             goBack()
         }
+        
     }
     
     @IBAction func goBack() {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBOutlet weak var errorMessageLabel: UILabel!
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
-    //Have a way to limit the number of requests a person can make.
+    @IBOutlet var image: UIImageView!
+    
 }

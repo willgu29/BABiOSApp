@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITextViewDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,19 +32,21 @@ class SettingsViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func submitTapped() {
-        //sendToWill(txt.text)
-        txt.resignFirstResponder()
-        txt.text = ""
-        var Alert : UIAlertView = UIAlertView(title: "Thank you", message: "Your report/suggestion has been recieved by us.\nWe will get to it as soon as possible.", delegate: self, cancelButtonTitle: "Ok")
-        Alert.show()
-    }
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
+        if txt.text == nil || txt.text == ""
+        {
+            var Alert : UIAlertView = UIAlertView(title: "Are you trying to troll us?", message: "Please Enter something before sending it to us. Thanks", delegate: self, cancelButtonTitle: "Ok")
+            Alert.show()
         }
-        return true
+        else
+        {
+            //sendToWill(txt.text)
+            txt.resignFirstResponder()
+            txt.text = ""
+            var Alert : UIAlertView = UIAlertView(title: "Thank you", message: "Your report/suggestion has been recieved by us.\nWe will get to it as soon as possible.", delegate: self, cancelButtonTitle: "Ok")
+            Alert.show()
+        }
     }
+    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)

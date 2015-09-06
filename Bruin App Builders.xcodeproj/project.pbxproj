@@ -17,12 +17,16 @@
 		5C3473E21B9B133D00B3B7B1 /* SpecificGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3473E01B9B133D00B3B7B1 /* SpecificGroupViewController.xib */; };
 		5C4ED6A91B848BDC0060CD14 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */; };
 		5C4ED6AA1B848BDC0060CD14 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */; };
+		5C67B5E71B9BB1A700BDFA47 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67B5E51B9BB1A700BDFA47 /* SignUpViewController.swift */; };
+		5C67B5E81B9BB1A700BDFA47 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C67B5E61B9BB1A700BDFA47 /* SignUpViewController.xib */; };
+		5C67B5EA1B9BB5B500BDFA47 /* ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67B5E91B9BB5B500BDFA47 /* ShakeAnimation.swift */; };
 		5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C847B271B7ECC49001DC747 /* GroupViewController.swift */; };
 		5C8DFEFD1B756960001A5148 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */; };
 		5C8F7B7A1B8AB69600EBAC46 /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F7B781B8AB69600EBAC46 /* PersonInfoViewController.swift */; };
 		5C8F7B7B1B8AB69600EBAC46 /* PersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F7B791B8AB69600EBAC46 /* PersonInfoViewController.xib */; };
 		5C8F7B7E1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F7B7C1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift */; };
 		5C8F7B7F1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */; };
+		5CD4BFB61B9BDD3700D07D1B /* DetailsChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4BFB51B9BDD3700D07D1B /* DetailsChecker.swift */; };
 		5CEBCE661B92223600F0FCC4 /* AddAGroupRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */; };
 		5CEBCE671B92223600F0FCC4 /* AddAGroupRequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */; };
 		84C6367A1B83F36900C53212 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C636791B83F36900C53212 /* MessagingViewController.swift */; };
@@ -59,12 +63,16 @@
 		5C3473E01B9B133D00B3B7B1 /* SpecificGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificGroupViewController.xib; sourceTree = "<group>"; };
 		5C4ED6A71B848BDC0060CD14 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5C4ED6A81B848BDC0060CD14 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		5C67B5E51B9BB1A700BDFA47 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5C67B5E61B9BB1A700BDFA47 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		5C67B5E91B9BB5B500BDFA47 /* ShakeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeAnimation.swift; sourceTree = "<group>"; };
 		5C847B271B7ECC49001DC747 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		5C8DFEFC1B756960001A5148 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		5C8F7B781B8AB69600EBAC46 /* PersonInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
 		5C8F7B791B8AB69600EBAC46 /* PersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonInfoViewController.xib; sourceTree = "<group>"; };
 		5C8F7B7C1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingToAPersonViewController.swift; sourceTree = "<group>"; };
 		5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingToAPersonViewController.xib; sourceTree = "<group>"; };
+		5CD4BFB51B9BDD3700D07D1B /* DetailsChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsChecker.swift; sourceTree = "<group>"; };
 		5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAGroupRequestViewController.swift; sourceTree = "<group>"; };
 		5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAGroupRequestViewController.xib; sourceTree = "<group>"; };
 		84C636791B83F36900C53212 /* MessagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +192,10 @@
 				842237D61B9ABE3B008CDE22 /* CustomViews */,
 				84EAB0151B75608500D7E59C /* LoginViewController.swift */,
 				84EAB0161B75608500D7E59C /* LoginViewController.xib */,
+				5C67B5E51B9BB1A700BDFA47 /* SignUpViewController.swift */,
+				5C67B5E61B9BB1A700BDFA47 /* SignUpViewController.xib */,
+				5CD4BFB51B9BDD3700D07D1B /* DetailsChecker.swift */,
+				5C67B5E91B9BB5B500BDFA47 /* ShakeAnimation.swift */,
 				84EAAFFC1B755FC800D7E59C /* Images.xcassets */,
 				84EAAFF41B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld */,
 				84EAAFF01B755FC800D7E59C /* Supporting Files */,
@@ -321,6 +333,7 @@
 				84EAB0181B75608500D7E59C /* LoginViewController.xib in Resources */,
 				84EAAFFD1B755FC800D7E59C /* Images.xcassets in Resources */,
 				5C4ED6AA1B848BDC0060CD14 /* SettingsViewController.xib in Resources */,
+				5C67B5E81B9BB1A700BDFA47 /* SignUpViewController.xib in Resources */,
 				5C8F7B7B1B8AB69600EBAC46 /* PersonInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,8 +393,11 @@
 				5C3473D11B9A3F4300B3B7B1 /* EventViewController.swift in Sources */,
 				5C3473DD1B9A5A4A00B3B7B1 /* EditProfileViewController.swift in Sources */,
 				84EAAFF61B755FC800D7E59C /* Bruin_App_Builders.xcdatamodeld in Sources */,
+				5CD4BFB61B9BDD3700D07D1B /* DetailsChecker.swift in Sources */,
 				5C3473E11B9B133D00B3B7B1 /* SpecificGroupViewController.swift in Sources */,
+				5C67B5EA1B9BB5B500BDFA47 /* ShakeAnimation.swift in Sources */,
 				5C8F7B7A1B8AB69600EBAC46 /* PersonInfoViewController.swift in Sources */,
+				5C67B5E71B9BB1A700BDFA47 /* SignUpViewController.swift in Sources */,
 				84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */,
 				5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */,
 				5C3473D51B9A418E00B3B7B1 /* EventsTableCell.swift in Sources */,

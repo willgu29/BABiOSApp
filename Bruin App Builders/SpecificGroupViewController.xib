@@ -45,6 +45,15 @@
                         <action selector="goBack" destination="-1" eventType="touchUpInside" id="gR1-u5-OG5"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgW-6z-dAn">
+                    <rect key="frame" x="259" y="13" width="46" height="30"/>
+                    <state key="normal" title="Join">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="joinTapped" destination="-1" eventType="touchUpInside" id="uRf-AP-xzf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

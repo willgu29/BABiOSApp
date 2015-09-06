@@ -25,6 +25,9 @@ class SpecificGroupViewController: UIViewController, UITableViewDelegate, UITabl
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func joinTapped() {
+        
+    }
     @IBAction func goBack() {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -33,6 +36,7 @@ class SpecificGroupViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //dismissViewControllerAnimated(true, completion: nil)
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -44,4 +48,6 @@ class SpecificGroupViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.membersNames.count
     }
+    
+    
 }
