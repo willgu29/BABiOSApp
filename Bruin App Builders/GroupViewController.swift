@@ -11,15 +11,24 @@ import UIKit
 class GroupViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     var arrayOfGroups = ["iOS", "Android", "Nodejs", "Swift", "Obj-C", "MongoDB", "Web","Hardware"]
+    var joined = ["xc","cds"]
     let pageHeader = UILabel()
     var collectionView: UICollectionView!
     var button: UIButton = UIButton()
+    struct Object {
+        var name : String
+        var members : [String]
+    }
+    var ArrayOfObjects = [Object]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initButton()
         initPageHeader()
         initCollectionView()
+        var ObjectOne = Object(name: "Joined Groups", members: joined)
+        var ObjectTwo = Object(name: "Other Groups", members: arrayOfGroups)
+        ArrayOfObjects = [ObjectOne, ObjectTwo]
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,31 +51,33 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
-        var textLabel = UILabel(frame: CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height))
-        textLabel.textAlignment = NSTextAlignment.Center //does it work
-        textLabel.textColor = UIColor.whiteColor()
-        textLabel.text = arrayOfGroups[indexPath.row]
-        textLabel.sizeToFit();
-        cell.contentView.addSubview(textLabel)
-        cell.backgroundColor = UIColor.blackColor()
-        cell.sizeToFit();
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        let cell : GroupCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! GroupCollectionViewCell
+        cell.nameOfGroup.text = ArrayOfObjects[indexPath.section].members[indexPath.row]
         return cell
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1  // Number of section
+        return 2  // Number of section
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayOfGroups.count;
+        return ArrayOfObjects[section].members.count;
     }
+
+    
+    //MARK: for headers
+//    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+//       
+//    }
+    
    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-        presentViewController(SpecificGroupViewController(nibName: "SpecificGroupViewController", bundle: nil), animated: true, completion: nil)
+        var SGVC = SpecificGroupViewController(nibName: "SpecificGroupViewController", bundle: nil)
+        SGVC.namely = arrayOfGroups[indexPath.row]
+        presentViewController(SGVC, animated: true, completion: nil)
     }
     
 
@@ -88,7 +99,8 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     // MARK: "+" button tapped
     func buttonAction(sender:UIButton!)
     {
-        presentViewController(AddAGroupRequestViewController(nibName:"AddAGroupRequestViewController", bundle:nil), animated: true, completion: nil)
+        var GVC = AddAGroupRequestViewController(nibName:"AddAGroupRequestViewController", bundle:nil)
+        presentViewController(GVC, animated: true, completion: nil)
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -117,14 +129,20 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     func initCollectionView()
     {
+        var nib = UINib(nibName: "GroupCollectionViewCell", bundle: nil)
         let height: CGFloat = self.view.frame.height - self.tabBarController!.tabBar.frame.height - 50
         var frame: CGRect = CGRectMake(0, 50, self.view.frame.width, height);
         self.collectionView = UICollectionView(frame:frame, collectionViewLayout: UICollectionViewFlowLayout());
         self.collectionView.delegate      =   self
         self.collectionView.dataSource    =   self
-        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+       //self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        self.collectionView.registerNib(nib, forCellWithReuseIdentifier: "Cell")
         self.collectionView.contentSize = CGSizeMake(100, 100);
         self.collectionView.backgroundColor = UIColor.clearColor()
         self.view.addSubview(self.collectionView)
+//        var nib = UINib(nibName: "EventsTableCell", bundle: nil)
+//        tableView.registerNib(nib, forCellReuseIdentifier: "cell")
     }
 }
+
+

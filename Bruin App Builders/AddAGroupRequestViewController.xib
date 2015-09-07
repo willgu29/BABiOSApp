@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="details" destination="2mA-E3-jLH" id="fxA-5e-7sv"/>
                 <outlet property="image" destination="oKD-d0-0nJ" id="Mjb-UO-RgC"/>
+                <outlet property="imageTwo" destination="ShQ-GW-0I4" id="dOr-Rv-dlm"/>
                 <outlet property="nameOfTheGroup" destination="nCu-8k-buV" id="8eC-BA-Pe3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,6 +18,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ShQ-GW-0I4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="6eO-6t-RkX"/>
+                        <constraint firstAttribute="height" constant="568" id="gAF-xF-mgk"/>
+                    </constraints>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgT-rj-wd5">
                     <rect key="frame" x="135" y="50" width="51" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -73,7 +81,7 @@
                     </items>
                 </navigationBar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKD-d0-0nJ">
-                    <rect key="frame" x="0.0" y="336" width="320" height="224"/>
+                    <rect key="frame" x="4" y="343" width="312" height="211"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

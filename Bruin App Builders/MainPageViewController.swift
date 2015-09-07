@@ -64,16 +64,19 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         searchBar.resignFirstResponder()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var vc = PersonInfoViewController(nibName: "PersonInfoViewController", bundle: nil)
         //println("You selected cell #\(indexPath.row)! whose value is \(items[indexPath.row])")
-//        if searchBar.text == nil || searchBar.text == ""
-//        {
-//            //use items
-//        }
-//        else
-//        {
-//            //use filtered
-//        }
-        presentViewController(PersonInfoViewController(nibName: "PersonInfoViewController", bundle: nil), animated: true, completion: nil)
+        if searchBar.text == nil || searchBar.text == ""
+        {
+            //use items
+            vc.namely = items[indexPath.row]
+        }
+        else
+        {
+            //use filtered
+            vc.namely = filtered[indexPath.row]
+        }
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -12,12 +12,12 @@ class SpecificGroupViewController: UIViewController, UITableViewDelegate, UITabl
     
     var groupID: String = ""
     var membersNames = ["a","a","a","a","a"]
-    
+    var namely : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
+        nameLabel.text = namely
         //Get the groupID and its members.
     }
     

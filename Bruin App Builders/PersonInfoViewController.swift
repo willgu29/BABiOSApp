@@ -11,13 +11,13 @@ import UIKit
 class PersonInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var fiveThings : [String] = ["a","b","c","d","e"]
-    
+    var namely = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate      =   self
         tableView.dataSource    =   self
-        
+        nameLabel.text = namely
         //FILL UP THE 5 THINGS ARRAY
         //GET OTHER DATA
         

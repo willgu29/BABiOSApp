@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         image.image = UIImage(named: "welcome-stagma-world1")
+        imageTwo.image = UIImage(named: ("blank"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +88,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBOutlet var image: UIImageView!
-    
+    @IBOutlet var imageTwo: UIImageView!
+
     
 }

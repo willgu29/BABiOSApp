@@ -9,6 +9,7 @@
                 <outlet property="email" destination="yqk-WL-oFt" id="gcK-5F-yM5"/>
                 <outlet property="firstName" destination="i8R-8D-320" id="DlA-u6-wo3"/>
                 <outlet property="image" destination="hMd-ue-Hvu" id="Dqb-Id-P7h"/>
+                <outlet property="imageTwo" destination="jwH-Qs-7tu" id="nUL-8Y-E8L"/>
                 <outlet property="lastName" destination="a4e-8c-vIS" id="hir-iI-WDf"/>
                 <outlet property="password" destination="erk-vB-BhN" id="DyA-8Z-0rA"/>
                 <outlet property="phoneNumber" destination="Qm0-dZ-L2Y" id="ZJ9-G5-s2o"/>
@@ -26,8 +27,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMd-ue-Hvu">
-                    <rect key="frame" x="8" y="333" width="304" height="227"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jwH-Qs-7tu">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="534"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB1-N2-c5x">
                     <rect key="frame" x="8" y="61" width="112" height="39"/>
@@ -102,6 +103,9 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMd-ue-Hvu">
+                    <rect key="frame" x="0.0" y="335" width="320" height="233"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

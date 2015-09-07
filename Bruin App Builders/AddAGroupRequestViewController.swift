@@ -12,11 +12,13 @@ class AddAGroupRequestViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        image.image = UIImage(named: "suggestion")
+        imageTwo.image = UIImage(named: "blank")
+        self.view.sendSubviewToBack(imageTwo)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        image.image = UIImage(named: "suggestion-box-logo")
         // Dispose of any resources that can be recreated.
     }
     
@@ -59,5 +61,6 @@ class AddAGroupRequestViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, withEvent: event)
     }
     @IBOutlet var image: UIImageView!
+    @IBOutlet var imageTwo: UIImageView!
     
 }

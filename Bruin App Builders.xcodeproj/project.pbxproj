@@ -26,6 +26,8 @@
 		5C8F7B7B1B8AB69600EBAC46 /* PersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F7B791B8AB69600EBAC46 /* PersonInfoViewController.xib */; };
 		5C8F7B7E1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F7B7C1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift */; };
 		5C8F7B7F1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */; };
+		5C948B7C1B9CF94500EEF8DF /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C948B7A1B9CF94500EEF8DF /* GroupCollectionViewCell.swift */; };
+		5C948B7D1B9CF94500EEF8DF /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C948B7B1B9CF94500EEF8DF /* GroupCollectionViewCell.xib */; };
 		5CD4BFB61B9BDD3700D07D1B /* DetailsChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4BFB51B9BDD3700D07D1B /* DetailsChecker.swift */; };
 		5CEBCE661B92223600F0FCC4 /* AddAGroupRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */; };
 		5CEBCE671B92223600F0FCC4 /* AddAGroupRequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */; };
@@ -72,6 +74,8 @@
 		5C8F7B791B8AB69600EBAC46 /* PersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonInfoViewController.xib; sourceTree = "<group>"; };
 		5C8F7B7C1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingToAPersonViewController.swift; sourceTree = "<group>"; };
 		5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingToAPersonViewController.xib; sourceTree = "<group>"; };
+		5C948B7A1B9CF94500EEF8DF /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C948B7B1B9CF94500EEF8DF /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		5CD4BFB51B9BDD3700D07D1B /* DetailsChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsChecker.swift; sourceTree = "<group>"; };
 		5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAGroupRequestViewController.swift; sourceTree = "<group>"; };
 		5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAGroupRequestViewController.xib; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		842237D61B9ABE3B008CDE22 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				5C948B7A1B9CF94500EEF8DF /* GroupCollectionViewCell.swift */,
+				5C948B7B1B9CF94500EEF8DF /* GroupCollectionViewCell.xib */,
 				5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */,
 				5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */,
 			);
@@ -334,6 +340,7 @@
 				84EAAFFD1B755FC800D7E59C /* Images.xcassets in Resources */,
 				5C4ED6AA1B848BDC0060CD14 /* SettingsViewController.xib in Resources */,
 				5C67B5E81B9BB1A700BDFA47 /* SignUpViewController.xib in Resources */,
+				5C948B7D1B9CF94500EEF8DF /* GroupCollectionViewCell.xib in Resources */,
 				5C8F7B7B1B8AB69600EBAC46 /* PersonInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +396,7 @@
 				84C636801B83FA1600C53212 /* APIWrapper.m in Sources */,
 				5CEBCE661B92223600F0FCC4 /* AddAGroupRequestViewController.swift in Sources */,
 				84EAB0171B75608500D7E59C /* LoginViewController.swift in Sources */,
+				5C948B7C1B9CF94500EEF8DF /* GroupCollectionViewCell.swift in Sources */,
 				5C8F7B7E1B8AB6C700EBAC46 /* MessagingToAPersonViewController.swift in Sources */,
 				5C3473D11B9A3F4300B3B7B1 /* EventViewController.swift in Sources */,
 				5C3473DD1B9A5A4A00B3B7B1 /* EditProfileViewController.swift in Sources */,
