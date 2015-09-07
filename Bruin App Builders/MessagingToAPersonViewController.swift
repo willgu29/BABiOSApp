@@ -8,27 +8,41 @@
 
 import UIKit
 
-class MessagingToAPersonViewController: UIViewController {
+class MessagingToAPersonViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var namely = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.bounces = false
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //nameLabel.text = namely
         
-        
-        //Stuff to get the keyboard up
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:" , name: UIKeyboardWillHideNotification, object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+     
         // Do any additional setup after loading the view.
     }
 
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.view.frame.origin.y -= keyboardSize.height
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.view.frame.origin.y += keyboardSize.height
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        
     }
     
     //to return the keyboard back to its place.
@@ -36,26 +50,23 @@ class MessagingToAPersonViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func keyboardWillShow(notification:NSNotification) {
-        adjustingHeight(true, notification: notification)
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 1
     }
     
-    func keyboardWillHide(notification:NSNotification) {
-        adjustingHeight(false, notification: notification)
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        cell.textLabel?.text = "filtered"
+        return cell
     }
     
-    func adjustingHeight(show:Bool, notification:NSNotification) {
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        var animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
-        var changeInHeight = (CGRectGetHeight(keyboardFrame) + 0) * (show ? 1 : -1)
-        UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
-            self.bottomConstraint.constant += changeInHeight
-            self.bottomConstraint2.constant += changeInHeight
-        })
-        
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        if typingANewMessage.isFirstResponder()
+        {
+            typingANewMessage.resignFirstResponder() 
+        }
     }
-    
     
     //MARK: send the message, yet to be done
     func send(message: String)
@@ -68,9 +79,9 @@ class MessagingToAPersonViewController: UIViewController {
     }
     
     @IBOutlet weak var typingANewMessage: UITextField!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomConstraint2: NSLayoutConstraint!
 
+    @IBOutlet var tableView: UITableView!
+    
     @IBAction func hitSend(sender: UIButton) {
         var newMessage : String
         if (typingANewMessage.text != nil)

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessagingViewController" customModule="Bruin_App_Builders" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="xkU-gu-bCT" id="RxQ-43-qqK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Sp9-k0-uW6"/>
             </connections>
         </placeholder>
@@ -20,15 +21,22 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCu-3X-C4d">
-                    <rect key="frame" x="137" y="269" width="46" height="30"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xkU-gu-bCT">
+                    <rect key="frame" x="0.0" y="53" width="320" height="466"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <action selector="goToAMessagingController:" destination="-1" eventType="touchUpInside" id="s1P-1O-eOW"/>
+                        <outlet property="dataSource" destination="-1" id="K0q-T6-PTk"/>
+                        <outlet property="delegate" destination="-1" id="M8C-m2-3dT"/>
                     </connections>
-                </button>
+                </tableView>
+                <tabBar hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-Ft-0Yg">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="DNR-6b-zdp"/>
+                        <tabBarItem systemItem="more" id="S7T-Xf-8Cg"/>
+                    </items>
+                </tabBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

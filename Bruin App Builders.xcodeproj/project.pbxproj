@@ -28,6 +28,8 @@
 		5C8F7B7F1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */; };
 		5C948B7C1B9CF94500EEF8DF /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C948B7A1B9CF94500EEF8DF /* GroupCollectionViewCell.swift */; };
 		5C948B7D1B9CF94500EEF8DF /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C948B7B1B9CF94500EEF8DF /* GroupCollectionViewCell.xib */; };
+		5C948B841B9D38AC00EEF8DF /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C948B821B9D38AC00EEF8DF /* MessagesTableViewCell.swift */; };
+		5C948B851B9D38AC00EEF8DF /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C948B831B9D38AC00EEF8DF /* MessagesTableViewCell.xib */; };
 		5CD4BFB61B9BDD3700D07D1B /* DetailsChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4BFB51B9BDD3700D07D1B /* DetailsChecker.swift */; };
 		5CEBCE661B92223600F0FCC4 /* AddAGroupRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */; };
 		5CEBCE671B92223600F0FCC4 /* AddAGroupRequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */; };
@@ -76,6 +78,8 @@
 		5C8F7B7D1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagingToAPersonViewController.xib; sourceTree = "<group>"; };
 		5C948B7A1B9CF94500EEF8DF /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C948B7B1B9CF94500EEF8DF /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
+		5C948B821B9D38AC00EEF8DF /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		5C948B831B9D38AC00EEF8DF /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
 		5CD4BFB51B9BDD3700D07D1B /* DetailsChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsChecker.swift; sourceTree = "<group>"; };
 		5CEBCE641B92223600F0FCC4 /* AddAGroupRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAGroupRequestViewController.swift; sourceTree = "<group>"; };
 		5CEBCE651B92223600F0FCC4 /* AddAGroupRequestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAGroupRequestViewController.xib; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				5C948B7B1B9CF94500EEF8DF /* GroupCollectionViewCell.xib */,
 				5C3473D31B9A418E00B3B7B1 /* EventsTableCell.swift */,
 				5C3473D41B9A418E00B3B7B1 /* EventsTableCell.xib */,
+				5C948B821B9D38AC00EEF8DF /* MessagesTableViewCell.swift */,
+				5C948B831B9D38AC00EEF8DF /* MessagesTableViewCell.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				5C3473D21B9A3F4300B3B7B1 /* EventViewController.xib in Resources */,
 				5C3473DE1B9A5A4A00B3B7B1 /* EditProfileViewController.xib in Resources */,
 				5C3473D61B9A418E00B3B7B1 /* EventsTableCell.xib in Resources */,
+				5C948B851B9D38AC00EEF8DF /* MessagesTableViewCell.xib in Resources */,
 				5C8F7B7F1B8AB6C700EBAC46 /* MessagingToAPersonViewController.xib in Resources */,
 				84C6367C1B83F38400C53212 /* MessagingViewController.xib in Resources */,
 				84EAB0181B75608500D7E59C /* LoginViewController.xib in Resources */,
@@ -409,6 +416,7 @@
 				84EAAFF31B755FC800D7E59C /* AppDelegate.swift in Sources */,
 				5C847B291B7ECC49001DC747 /* GroupViewController.swift in Sources */,
 				5C3473D51B9A418E00B3B7B1 /* EventsTableCell.swift in Sources */,
+				5C948B841B9D38AC00EEF8DF /* MessagesTableViewCell.swift in Sources */,
 				84C6367A1B83F36900C53212 /* MessagingViewController.swift in Sources */,
 				5C4ED6A91B848BDC0060CD14 /* SettingsViewController.swift in Sources */,
 			);

@@ -9,22 +9,49 @@
 import UIKit
 
 class MessagingViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 
     @IBAction func goToAMessagingController(sender: UIButton) {
-        presentViewController(MessagingToAPersonViewController(nibName:"MessagingToAPersonViewController", bundle:nil), animated: true, completion: nil)
+        
     }
-
+    
+    @IBOutlet var tableView: UITableView!
+    
+    var tableData: [String] = ["Ferrari", "BMW", "Mitsubishi", "Lambo","Ferrari", "BMW", "Mitsubishi", "Lambo"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        var nib = UINib(nibName: "MessagesTableViewCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "cell")
+        //tableView.registerClass(EventsTableCell.self, forCellReuseIdentifier: "cell")
+        // tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.bounces = false
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.tableData.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        var cell : MessagesTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! MessagesTableViewCell;
+        cell.cellLabel.text = tableData[indexPath.row]
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //println("Row \(indexPath.row) selected")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var vc = MessagingToAPersonViewController(nibName:"MessagingToAPersonViewController", bundle:nil)
+        vc.namely = tableData[indexPath.row]
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70
+    }
 }

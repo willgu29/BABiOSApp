@@ -27,19 +27,6 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        //Doesnt work
-        
-        var destinationVC : PersonInfoViewController = segue.destinationViewController as! PersonInfoViewController
-        let cell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow()!)
-        var namely : String = ((cell!.textLabel)?.text)!
-        println(namely)
-        destinationVC.nameLabel.text = "nxcmdx"
-        
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }

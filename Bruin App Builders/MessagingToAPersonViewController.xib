@@ -6,8 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessagingToAPersonViewController" customModule="Bruin_App_Builders" customModuleProvider="target">
             <connections>
-                <outlet property="bottomConstraint" destination="0yN-eC-kaK" id="aHR-do-h9f"/>
-                <outlet property="bottomConstraint2" destination="LPc-w6-9ZE" id="DWi-ac-SQH"/>
+                <outlet property="tableView" destination="Iea-Ch-M6p" id="Lqf-ei-Fmj"/>
                 <outlet property="typingANewMessage" destination="aoi-uh-svX" id="LFI-GX-ryJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,16 +18,16 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmh-TC-JPt">
                     <rect key="frame" x="0.0" y="4" width="320" height="41"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your text here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-uh-svX">
-                    <rect key="frame" x="0.0" y="530" width="259" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your text here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-uh-svX">
+                    <rect key="frame" x="8" y="530" width="259" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-C8-OF2">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-C8-OF2">
                     <rect key="frame" x="261" y="530" width="59" height="30"/>
                     <state key="normal" title="Send">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,12 +45,19 @@
                         <action selector="goBack" destination="-1" eventType="touchUpInside" id="aAS-SF-eYZ"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-bP-yNT">
+                    <rect key="frame" x="8" y="411" width="320" height="47"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-Ch-M6p">
+                    <rect key="frame" x="0.0" y="45" width="320" height="477"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Qzf-D3-Ujw"/>
+                        <outlet property="delegate" destination="-1" id="zdS-sa-NDz"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="aoi-uh-svX" secondAttribute="bottom" constant="8" id="0yN-eC-kaK"/>
-                <constraint firstAttribute="bottom" secondItem="LFJ-C8-OF2" secondAttribute="bottom" constant="8" id="LPc-w6-9ZE"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="377" y="752"/>
         </view>

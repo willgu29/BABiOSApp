@@ -34,18 +34,6 @@ class EditProfileViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func checkIfUitextview(aObject : AnyObject) -> Bool
-    {
-        if let v = aObject as? UITextView
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
-    }
-    
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             if userNeedsHelp.isFirstResponder() || userCanHelp.isFirstResponder()
