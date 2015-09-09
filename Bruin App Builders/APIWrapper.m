@@ -9,17 +9,42 @@
 #import "APIWrapper.h"
 #import "APIURLs.h"
 
+@interface APIWrapper()
+
+@property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
+
+@end
+
 @implementation APIWrapper
+
++ (id)sharedManager {
+    static APIWrapper *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        [self setupManager];
+    }
+    return self;
+}
 
 -(void)postLogin:(NSString *)email andPassword:(NSString *)password
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-    manager.responseSerializer = responseSerializer;
+ 
 
     NSDictionary *parameters = @{@"email": email, @"password": password};
-    [manager POST:API_POST_LOGIN parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    NSString *postURL = [NSString stringWithFormat:@"%@%@", DOMAIN_ROOT,API_POST_LOGIN];
+
+    [_manager POST:postURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         if ([responseObject isKindOfClass:[NSString class]]) {
             responseObject = @{@"message" : @"/"};
@@ -33,6 +58,64 @@
         [_delegate loginResponse:dictionary];
     }];
 
+}
+
+-(void)getUser:(NSString *)userID
+{
+    NSDictionary *parameters = nil;
+    NSString *getURL;
+    if (userID){
+        getURL = [NSString stringWithFormat:@"%@%@/%@", DOMAIN_ROOT,API_GET_USERS,userID];
+    } else {
+        getURL = [NSString stringWithFormat:@"%@%@", DOMAIN_ROOT,API_GET_USERS];
+    }
+    NSLog(@"URL: %@", getURL);
+    [_manager GET:getURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+  
+        [_delegate userArrayResponse:responseObject];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        NSArray *errorArray = @[];
+        [_delegate userArrayResponse:errorArray];
+    }];
+}
+
+-(void)getEvent:(NSString *)eventID
+{
+    NSDictionary *parameters = nil;
+    NSString *getURL;
+    if (eventID){
+        getURL = [NSString stringWithFormat:@"%@%@/%@", DOMAIN_ROOT,API_GET_EVENTS,eventID];
+    } else {
+        getURL = [NSString stringWithFormat:@"%@%@", DOMAIN_ROOT,API_GET_EVENTS];
+    }
+    [_manager GET:getURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        
+        [_delegate eventArrayResponse:responseObject];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        NSArray *errorArray = @[];
+        [_delegate eventArrayResponse:errorArray];
+    }];
+}
+
+
+#pragma mark - Helper methods
+
+-(void)setupManager
+{
+    _manager = [AFHTTPRequestOperationManager manager];
+    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    //AFHTTPResponseSerializer *responseSerializerHTTP = [AFHTTPResponseSerializer serializer];
+    _manager.responseSerializer = responseSerializer;
+    _manager.responseSerializer.acceptableContentTypes =  [_manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
 }
 
 @end

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
+class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, APIWrapperDelegate{
 
     var searchActive : Bool = false
     var filtered:[String] = []
@@ -16,10 +16,11 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     var items: [String] = ["Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "Games","Viper", "X", "can be seen","Cant be seen", "X", "Games","Viper", "X", "Games"]
     let pageHeader   = UILabel(frame: CGRectMake(0, 0, 200, 21))
     let searchBar : UISearchBar = UISearchBar()
-
+    let wrapper: APIWrapper = APIWrapper.sharedManager() as! APIWrapper;
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
+        getUsers()
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,6 +111,12 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.touchesBegan(touches, withEvent: event)
     }
     
+    //MARK: Delegate
+    
+    func userArrayResponse(userArray: [AnyObject]!) {
+        NSLog("User Array %@: Member count: %d", userArray, userArray.count);
+    }
+    
     func initialize()
     {
         pageHeader.frame = CGRectMake(0, 8, self.view.frame.width, 50)
@@ -132,6 +139,12 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.bounces = false
         self.view.addSubview(tableView)
+    }
+    
+    func getUsers()
+    {
+        wrapper.delegate = self;
+        wrapper.getUser(nil);
     }
 
 }

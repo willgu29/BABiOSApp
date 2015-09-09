@@ -8,12 +8,13 @@
 
 import UIKit
 
-class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, APIWrapperDelegate{
 
     @IBOutlet var tableView: UITableView!
     
     var tableData: [String] = ["Ferrari", "BMW", "Mitsubishi", "Lambo","Ferrari", "BMW", "Mitsubishi", "Lambo"]
-    
+    let wrapper: APIWrapper = APIWrapper.sharedManager() as! APIWrapper;
+
     override func viewDidLoad() {
         super.viewDidLoad()
         var nib = UINib(nibName: "EventsTableCell", bundle: nil)
@@ -21,6 +22,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //tableView.registerClass(EventsTableCell.self, forCellReuseIdentifier: "cell")
        // tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.bounces = false
+        self.getEvents();
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +48,17 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
+    }
+    
+    //MARK: Delegate methods
+    
+    func eventArrayResponse(eventArray: [AnyObject]!) {
+        NSLog("Events %@ Event Count: %d", eventArray, eventArray.count);
+    }
+    
+    func getEvents(){
+        wrapper.delegate = self;
+        wrapper.getEvent(nil);
     }
 }
 

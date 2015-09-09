@@ -12,13 +12,27 @@
 @class APIWrapperDelegate;
 @protocol APIWrapperDelegate <NSObject>
 
+@optional
 -(void)loginResponse:(NSDictionary *)status;
+-(void)userArrayResponse:(NSArray *)userArray;
+-(void)eventArrayResponse:(NSArray *)eventArray;
 
 @end
 
 @interface APIWrapper : NSObject
 
++ (id)sharedManager;
+
 
 @property (nonatomic, assign) id delegate;
+
+
+
 -(void)postLogin:(NSString *)email andPassword:(NSString *)password;
+-(void)getUser:(NSString *)userID; //pass nil to get all users
+-(void)getEvent:(NSString *)eventID; //pass all to get all events (else nil to get events user invited to)
+
+
+-(instancetype)init;
+
 @end

@@ -15,7 +15,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var activityIND: UIActivityIndicatorView!
-    let wrapper = APIWrapper();
+    let wrapper: APIWrapper = APIWrapper.sharedManager() as! APIWrapper;
     let anim = CAKeyframeAnimation( keyPath:"transform" )
     var checker = Checker()
     //MARK: View Life Cycle
@@ -149,7 +149,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         messageVC.title = "Messages";
         settingsVC.title = "Setting";
         
-        let arrayOfVCs = [ eventsVC, mainVC, groupVC, messageVC, settingsVC];
+        let arrayOfVCs = [mainVC, groupVC, messageVC, eventsVC, settingsVC];
         
         tabVC.viewControllers = arrayOfVCs;
         return tabVC;
