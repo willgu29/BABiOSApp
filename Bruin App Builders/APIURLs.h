@@ -51,7 +51,7 @@
     //Add /:convoID and pass in text to send message to message thread
 
 //Edit account info
-#define API_POST_USERS "/api/users" //add /:userID pass in topFiveTime (string), canOffer (array), wants (array)
+#define API_POST_USERS @"/api/users" //add /:userID pass in topFiveTime (string), canOffer (array), wants (array)
 
 
 

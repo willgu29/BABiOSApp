@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MessagingViewController: UIViewController {
+class MessagingViewController: UIViewController, APIWrapperDelegate {
     
+    let wrapper: APIWrapper = APIWrapper.sharedManager() as! APIWrapper;
 
     @IBAction func goToAMessagingController(sender: UIButton) {
         
@@ -26,6 +27,8 @@ class MessagingViewController: UIViewController {
         //tableView.registerClass(EventsTableCell.self, forCellReuseIdentifier: "cell")
         // tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.bounces = false
+        
+        self.getMessages();
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,5 +56,14 @@ class MessagingViewController: UIViewController {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 70
+    }
+    
+    func getMessages() {
+        wrapper.delegate = self;
+        wrapper.getMessages(nil);
+    }
+    
+    func messageArrayResponse(messageArray: [AnyObject]!) {
+        NSLog("message threads: %@", messageArray);
     }
 }

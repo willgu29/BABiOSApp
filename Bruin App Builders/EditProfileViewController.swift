@@ -10,6 +10,8 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
+    let wrapper: APIWrapper = APIWrapper.sharedManager() as! APIWrapper;
+
     var originalFiveThings : [String] = [ "" , "" , "" , "" , ""]
     
     override func viewDidLoad() {
@@ -70,7 +72,16 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func submitButton(sender: UIButton) {
         //Save everything.
+        
+        
+        
         goBack()
+    }
+    
+    //MARK: Helper functions
+    func saveProfile(){
+        //wrapper.delegate = self
+       // wrapper.postEditProfile(<#topFiveTime: String!#>, canOffer: <#[AnyObject]!#>, wants: <#[AnyObject]!#>)
     }
 
 }

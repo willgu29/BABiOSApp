@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        wrapper.getLoginStatus();
     }
     
     //Used to remove the keyboard when not in use
@@ -155,7 +155,9 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         return tabVC;
     }
    
-    
+    func loginStatus(status: [NSObject : AnyObject]!) {
+        NSLog("status : %@", status);
+    }
     
     
 }
