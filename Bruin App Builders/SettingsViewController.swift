@@ -27,6 +27,7 @@ class SettingsViewController: UIViewController, UITextViewDelegate {
     @IBAction func tappedEditProfile() {
         presentViewController(EditProfileViewController(nibName:"EditProfileViewController", bundle:nil), animated: true, completion: nil)
     }
+    
     @IBAction func tappedLogOut() {
         dismissViewControllerAnimated(true, completion: nil)
     }

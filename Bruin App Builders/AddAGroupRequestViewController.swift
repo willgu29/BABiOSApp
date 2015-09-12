@@ -37,14 +37,9 @@ class AddAGroupRequestViewController: UIViewController, UITextFieldDelegate {
         {
             var Alert : UIAlertView = UIAlertView(title: "SUBMISSION FAILED", message: "Please enter a name of the new group that you think should be present\nAdd Details (Optional)\nThanks", delegate: self, cancelButtonTitle: "Ok")
             Alert.show()
-
         }
         else
         {
-            //send it to will for him to check.
-            //send him a report saying that the new group info has been sent to will
-            //go back to groups page
-            
             var Alert : UIAlertView = UIAlertView(title: "Group Suggestion Submitted", message: "Thank you", delegate: self, cancelButtonTitle: "Ok")
             Alert.show()
             goBack()

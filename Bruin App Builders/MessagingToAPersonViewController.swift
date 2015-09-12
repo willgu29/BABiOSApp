@@ -16,7 +16,7 @@ class MessagingToAPersonViewController: UIViewController, UITableViewDataSource,
         super.viewDidLoad()
         tableView.bounces = false
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        //nameLabel.text = namely
+        nameLabel.text = namely
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
@@ -26,13 +26,13 @@ class MessagingToAPersonViewController: UIViewController, UITableViewDataSource,
 
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height
+                self.SubView.frame.origin.y -= keyboardSize.height
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height
+                self.SubView.frame.origin.y += keyboardSize.height
         }
     }
     
@@ -51,22 +51,21 @@ class MessagingToAPersonViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 1
+       return 20
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        cell.textLabel?.text = "filtered"
+        cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        if typingANewMessage.isFirstResponder()
-        {
-            typingANewMessage.resignFirstResponder() 
-        }
+        typingANewMessage.resignFirstResponder()
     }
+    
     
     //MARK: send the message, yet to be done
     func send(message: String)
@@ -92,5 +91,7 @@ class MessagingToAPersonViewController: UIViewController, UITableViewDataSource,
         typingANewMessage.text = ""
     }
 
+    @IBOutlet var SubView: UIView!
+    @IBOutlet var nameLabel: UILabel!
 
 }

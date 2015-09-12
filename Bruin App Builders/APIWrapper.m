@@ -57,8 +57,6 @@
 
 -(void)postLogin:(NSString *)email andPassword:(NSString *)password
 {
- 
-
     NSDictionary *parameters = @{@"email": email, @"password": password};
     
     NSString *postURL = [NSString stringWithFormat:@"%@%@", DOMAIN_ROOT,API_POST_LOGIN];

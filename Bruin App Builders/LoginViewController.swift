@@ -143,6 +143,8 @@ class LoginViewController: UIViewController, APIWrapperDelegate, UITextFieldDele
         let messageVC = MessagingViewController(nibName:"MessagingViewController", bundle:nil);
         let settingsVC = SettingsViewController(nibName:"SettingsViewController", bundle:nil);
         
+        //mainVC.items = wrapper.getUser(nil)
+        
         eventsVC.title = "Events"
         mainVC.title = "People";
         groupVC.title = "Groups";
