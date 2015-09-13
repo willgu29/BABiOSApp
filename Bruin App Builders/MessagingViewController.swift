@@ -18,7 +18,7 @@ class MessagingViewController: UIViewController, APIWrapperDelegate {
     
     @IBOutlet var tableView: UITableView!
     
-    var tableData: [String] = ["Ferrari", "BMW", "Mitsubishi", "Lambo","Ferrari", "BMW", "Mitsubishi", "Lambo"]
+    var tableData: [NSDictionary] = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class MessagingViewController: UIViewController, APIWrapperDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell : MessagesTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! MessagesTableViewCell;
-        cell.cellLabel.text = tableData[indexPath.row]
+        cell.cellLabel.text = tableData[indexPath.row].objectForKey("fullName") as? String;
         return cell
     }
     
@@ -50,8 +50,9 @@ class MessagingViewController: UIViewController, APIWrapperDelegate {
         //println("Row \(indexPath.row) selected")
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var vc = MessagingToAPersonViewController(nibName:"MessagingToAPersonViewController", bundle:nil)
-        vc.namely = tableData[indexPath.row]
+        vc.namely = tableData[indexPath.row].objectForKey("fullName") as! String;
         presentViewController(vc, animated: true, completion: nil)
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -65,5 +66,7 @@ class MessagingViewController: UIViewController, APIWrapperDelegate {
     
     func messageArrayResponse(messageArray: [AnyObject]!) {
         NSLog("message threads: %@", messageArray);
+        self.tableData = messageArray as! [NSDictionary];
+        self.tableView.reloadData();
     }
 }
